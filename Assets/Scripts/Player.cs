@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
 {
     public static event Action<int> OnCompletenessChange;
     int completeness; //starts low, wins when fullm loses when empty
-    bool[] informationCollection = new bool[10];
+    [SerializeField] PieceSO[] pieces;
+    bool[] informationCollection = new bool[4];
     public bool isGripping;
 
 

@@ -29,6 +29,11 @@ public class Character : MonoBehaviour
         spriteRenderer.sprite = graphic[0];
     }
 
+    public void SetDialogueTree(int index)
+    {
+
+    }
+
     public void SwitchGraphic(int index)
     {
         spriteRenderer.sprite = graphic[index];

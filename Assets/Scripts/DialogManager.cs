@@ -54,6 +54,12 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    public void SetInteractedChar(Character character)
+    {
+        InteractedChar = character;
+        InteractedChar.SetDialogueTree(GameplayManager.Instance.GetCurrentMapID());
+    }
+
     //print what the character has to say
     public void PrintCharacterDialogue()
     {

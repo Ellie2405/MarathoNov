@@ -10,8 +10,10 @@ public class GameplayManager : MonoBehaviour
     public static GameplayManager Instance;
 
     [SerializeField] DialogManager dm;
+    [SerializeField] TravelManager tm;
     [SerializeField] Character InteractedChar;
     [SerializeField] Player player;
+    int currentMapID;
 
     [SerializeField] GameObject characterPortrait;
     [SerializeField] SpriteRenderer Darkening;
@@ -21,19 +23,11 @@ public class GameplayManager : MonoBehaviour
     bool isControlEnabled = true;
     bool IsCharacterIn = false;
     public bool IsWaitingForPlayer = false;
-    bool isNarratorQueued = false;
-    bool isNarratorSpeaking = false;
-    bool isEventQueued = false;
-    bool isShowingEventText = false;
 
-    [SerializeField] TextMeshProUGUI characterDialogue;
-    [SerializeField] GameObject PlayerDialogueOptions;
-    [SerializeField] PlayerDialogueOption[] options;
-    [SerializeField] TextMeshProUGUI EventText;
-    [SerializeField] TextMeshProUGUI NarratorText;
     [SerializeField] Button gripButton;
     [SerializeField] SpriteRenderer BG;
     [SerializeField] Sprite BGNew;
+    [SerializeField] Character[] characters;
 
     private void Awake()
     {
@@ -45,9 +39,7 @@ public class GameplayManager : MonoBehaviour
 
     private void Start()
     {
-        characterDialogue.text = string.Empty;
-        EventText.text = string.Empty;
-        NarratorText.text = string.Empty;
+        CharacterImage.OnImageClicked += InteractWithCharacter;
     }
 
     private void Update()
@@ -66,10 +58,23 @@ public class GameplayManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                if(IsCharacterIn)
-                dm.StepForward();
+                if (IsCharacterIn)
+                    dm.StepForward();
             }
         }
+    }
+
+    //on interact with character, hide navigation ui? and display dialogue UI, ready systems and visuals
+    public void InteractWithCharacter(int charID)
+    {
+        dm.SetInteractedChar(characters[charID]);
+        FadeCharacterIn();
+        IsCharacterIn = true;
+    }
+
+    public int GetCurrentMapID()
+    {
+        return tm.GetCurrentMapID();
     }
 
     public void ImproveBG()
