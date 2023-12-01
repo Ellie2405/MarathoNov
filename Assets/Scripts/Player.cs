@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         informationCollection[infoID] = true;
         if (infoID == 1)
         {
-            GameplayManager.Instance.ImproveBG();
+            //GameplayManager.Instance.ImproveBG();
         }
     }
 

@@ -1,0 +1,432 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: Char2DialogueData
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Ho i have finally found you little one! i was looking for you for so
+      long!
+    playerOptions:
+    - Ahh, me? really?
+    - You have found me *grin*
+    - What happened to your arm?
+    nextDialogueIndex: 01000000010000001d000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: 'Yes yes! certenly! My name is Willie, and im an adventurer!.. i was
+      looking just for you for many days, nay, weeks! '
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 1
+      text: While you speak with the short dwarf, you see some of the villagers are
+        looking at you and him with a weird look.. you still unable to understand
+        it.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: You see, this potion is meant only for you! One sip of it will make
+      you have magic powers! Do you like magic little man?
+    playerOptions:
+    - Why are those people looking at us like that?
+    - (Get excited) Magic? with fire and all??
+    - What happened to your arm?
+    nextDialogueIndex: 03000000080000001d000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Ho dont mind them little man, they are probably looking at this very
+      SPEACIAL potion! yes!
+    playerOptions:
+    - I.. don't think they are looking at the potion..
+    - Ho ok then!
+    nextDialogueIndex: 0400000007000000
+  - conditions:
+    - condi: 1
+      text: You start noticing that Willie is sweating, he suddenly looked nervous.
+        at that moment it was very clear to you the people were looking at HIM with
+        utter contempt.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Hehe of course they are! dont mind them little man, it's a ONCE in
+      a lifetime deal!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Are you interested then? hehe..
+    playerOptions:
+    - How did you get this potion?
+    - Yes! very interested!
+    nextDialogueIndex: 0600000009000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Ho i have stolen it!.. From bad people of course! BAD people yes!
+    playerOptions:
+    - Why did you steal their potion?
+    nextDialogueIndex: 23000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: So are you interested little man?
+    playerOptions:
+    - Yes! very interested!
+    nextDialogueIndex: 09000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Fire yes of course! are you interested?
+    playerOptions:
+    - Yes! very interested!
+    - (Leave) I think ill pass for now...
+    nextDialogueIndex: 090000001a000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Of course you are! and im willing to trade it with you for only 25
+      rings! can you believe that?? its almost FREE!
+    playerOptions:
+    - Rings? what do you mean..
+    - Ho umm, im sorry i thought you will just give it to me
+    - (Play along) yes sure! ill give you those rings!
+    nextDialogueIndex: 0a0000001000000017000000
+  - conditions:
+    - condi: 2
+      text: Job piece added.
+      optionNum: 0
+      num: 4
+    requiresGrip: 0
+    dialogue: What? you dont know what rings are? these are small coins we use to
+      trade with each other.. have any?
+    playerOptions:
+    - No i dont..
+    nextDialogueIndex: 0b000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: That's ok little man! you can come with me to the city and get yourself
+      workin!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: There are a lot of rebuilding going on since the war ended, im sure
+      you can get your hands on some rings real soon!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 3
+      text: 
+      optionNum: 0
+      num: 0
+    - condi: 7
+      text: 
+      optionNum: 1
+      num: 0
+    requiresGrip: 0
+    dialogue: When you do get 30 rings, come look for me! ill give you the MAGICAL
+      potion!
+    playerOptions:
+    - 30 rings? didnt you say 25 before?
+    - Rebuilding? war? what are you talking about?
+    nextDialogueIndex: 0e00000011000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Price for keeping you that potion little man! Huh that's business!
+      yes!
+    playerOptions:
+    - Ho ok! where is the city at then?
+    nextDialogueIndex: 0f000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Keep going straight and then keep to your left. that road will lead
+      you to the city!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 7
+      text: 
+      optionNum: 0
+      num: 0
+    - condi: 3
+      text: 
+      optionNum: 1
+      num: 0
+    requiresGrip: 0
+    dialogue: 'Give it to you? Huh! are u mad? nothing is given here.. the war have
+      made everyone equally poor! '
+    playerOptions:
+    - 'War? '
+    - Ho i see.. *Look down*
+    nextDialogueIndex: 1100000016000000
+  - conditions:
+    - condi: 2
+      text: War piece added.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: What do you mean "war"? do you seriously want to tell me you dont know
+      about the war??
+    playerOptions:
+    - No, what are you talking about?
+    nextDialogueIndex: 12000000
+  - conditions:
+    - condi: 9
+      text: Willie's mouth opened in shock. you understood that this event is much
+        more then common knowledge.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Its like you were sent here from another continent!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: '*sigh*... Look kid, i dont know who you are or where did you come
+      from..'
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: But this fact alone is very odd! i will tell you what i can. the king
+      of Balthas did something that he should not have done! for that reason the
+      people of Madeia attacked our lands. this village was the first of many.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 3
+      text: 
+      optionNum: 0
+      num: 4
+    - condi: 7
+      text: 
+      optionNum: 1
+      num: 4
+    requiresGrip: 0
+    dialogue: Now, i can't say no more. if you want to buy the potion, pay up 30
+      rings and i will be on my way.
+    playerOptions:
+    - 30 rings? didnt you say 25 before?
+    - Rings? what do you mean..
+    - (Play along) yes sure! ill give you those rings!
+    - Ho umm, im sorry i thought you will just give it to me
+    nextDialogueIndex: 0e0000000a0000001700000010000000
+  - conditions:
+    - condi: 2
+      text: Job piece added.
+      optionNum: 0
+      num: 4
+    requiresGrip: 0
+    dialogue: Do you know how to get any?
+    playerOptions:
+    - No i dont..
+    nextDialogueIndex: 0b000000
+  - conditions:
+    - condi: 1
+      text: You both look at one another, nothing happens. Willie raises his eyebrows.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: 'Ok then! '
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Well? are you giving me my 25 rings?
+    playerOptions:
+    - Ho! umm i dont really have any!
+    nextDialogueIndex: 19000000
+  - conditions:
+    - condi: 2
+      text: Job piece added.
+      optionNum: 0
+      num: 4
+    requiresGrip: 0
+    dialogue: So you dont even have enough for this MAGICAL potion then!
+    playerOptions:
+    - No i dont..
+    nextDialogueIndex: 0b000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Wait wait hehe.. look little man, this is a ONCE in a lifetime deal!
+      surely you dont intend on missing it don't you?
+    playerOptions:
+    - (Leave) I think i will, but thank you..
+    - 'On second thought.. '
+    nextDialogueIndex: 1b0000001c000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Hooo i assure you, this deal is worth your time little man! Are you
+      interested?
+    playerOptions:
+    - Yes! very interested!
+    nextDialogueIndex: 09000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Ho nothing that should worry a fine little man as yourself!
+    playerOptions:
+    - Ahh, ok.. you said you have been.. looking for me?
+    - (Be kind) You can tell me..
+    nextDialogueIndex: 010000001e000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Ahh, hehe yes of course! my hand was chopped down after stealing this
+      potion from BAD people! yes very bad people!
+    playerOptions:
+    - Why did they do.. this to your arm?
+    - Why did you steal their potion?
+    nextDialogueIndex: 1f00000023000000
+  - conditions:
+    - condi: 9
+      text: The dwarf's expression that was once full of excitement, is slowly turning
+        into something else, his eyes makes you feel like you are not behaving the
+        way he thought you would.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: 'Because i was stealing what is theirs i guess.. hardly see why does
+      that matter now little man! '
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I have a ONCE in a life time offer for you!
+    playerOptions:
+    - Are you talking about this potion?
+    - '*steal from the thief* (Its ok to steal if he stole it first, right?)'
+    nextDialogueIndex: 0100000021000000
+  - conditions:
+    - condi: 9
+      text: You tried to snatch the vial from the dwarf's hand. As if he was waiting
+        for you to do so, the dwarf quickly pulled his hand back and smiled with
+        even more teeth showing.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Trying to steal from a thief? huh??
+    playerOptions:
+    - So you did steal that potion..
+    nextDialogueIndex: 22000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Ho.. yes.. But! they were very very BAD guys!
+    playerOptions:
+    - Why did you steal their potion?
+    nextDialogueIndex: 23000000
+  - conditions:
+    - condi: 9
+      text: The dwarf's expression that was once full of excitement, is slowly turning
+        into something else, his eyes makes you feel like you are not behaving the
+        way he thought you would.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Because.. they were planning to use if for some really BAD causes!
+      i have had to stop them! yes!
+    playerOptions:
+    - So you have saved a lot of people!
+    - (Keep digging) What were they planning?
+    nextDialogueIndex: 240000002c000000
+  - conditions:
+    - condi: 1
+      text: The dwarf's expression changed again but this time, it turned into sadness..
+        "why is he sad? didn't he say he saved a lot of people? isnt he a hero?"
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Hehe, yes.. I.. I did save a lot of people.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: To be honest little man, i was lying to you.. hehe.. thats the only
+      thing i know how to do..
+    playerOptions:
+    - Ho.. you were? So where did you get that magic potion?
+    - Ho.. so there wasn't any bad guys?
+    nextDialogueIndex: 2600000027000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Its not even a magic potion, i was trying to trick you into buying
+      it hehe.. couldn't even pull that off..
+    playerOptions:
+    - ...
+    nextDialogueIndex: 28000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: No bad guys little man.. I was the bad guy here.. i stole again and
+      again until they punished me and took my hand for it..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I think i can't do this anymore little man.. its too much.. their faces,
+      their EYES.. i just can't keep up this FAKE mask anymore.
+    playerOptions:
+    - You know.. the real question you should ask yourself is.. are YOU ok with keeping
+      up that mask?
+    nextDialogueIndex: 29000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I dont have any other option! i need rings to regain my fortunes! i
+      lost everything i owned in that DAMN war.
+    playerOptions:
+    - Can you stop tricking people and start doing something else?
+    nextDialogueIndex: 2a000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Well yes but.. my reputation is.. how can i face them again..
+    playerOptions:
+    - I believe that you need to, you said it yourself, you cant keep up like this,
+      and i dont think you should.
+    nextDialogueIndex: 2b000000
+  - conditions:
+    - condi: 9
+      text: Willie smiled again as if the last few seconds didnt happen. But you
+        managed to see right through his glassy eyes.
+      optionNum: 0
+      num: 0
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Thank you little man. I have some things to think about. I'm heading
+      to the big city. maybe ill see you again.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: '*sigh* Listen kid.. this potion is very special, are you buying or
+      not?'
+    playerOptions:
+    - That's why you have been looking for me?
+    - I dont have anything to pay you with...
+    nextDialogueIndex: 010000002d000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Just a small price of 25 rings would do little man!
+    playerOptions:
+    - Rings? what do you mean..
+    - (Leave) I think ill pass for now...
+    nextDialogueIndex: 0a0000001a000000

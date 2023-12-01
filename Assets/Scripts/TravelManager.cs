@@ -17,17 +17,17 @@ public class TravelManager : MonoBehaviour
         Navigator.OnNavigatorClicked += ChangeMap;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangeMap(1);
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        ChangeMap(1);
+    //    }
+    //}
 
     public void ChangeMap(int mapID)
     {
-        ToggleNavigationUI();
+        GameplayManager.Instance.ToggleNavigationUI(false);
         if (!isMapChanging)
         {
             BG.DOColor(Color.black, 1.2f).SetLoops(2, LoopType.Yoyo).OnComplete(() => ChangeMapComplete());
@@ -41,7 +41,7 @@ public class TravelManager : MonoBehaviour
     {
         isMapChanging = false;
         ToggleNavigationUI(true);
-        
+        GameplayManager.Instance.SelectWorldButtonLayout(currentMapID);
     }
 
     void ToggleNavigationUI()
@@ -49,15 +49,15 @@ public class TravelManager : MonoBehaviour
         NavigationUI.SetActive(!NavigationUI.activeInHierarchy);
     }
 
-    void ToggleNavigationUI(bool toggle)
+    public void ToggleNavigationUI(bool toggle)
     {
         NavigationUI.SetActive(toggle);
     }
 
     void ChangeMapSprite()
     {
-        BG.sprite = maps[1].maps[nextMap];
-
+        BG.sprite = maps[0].maps[nextMap];
+        currentMapID = nextMap;
     }
 
     public int GetCurrentMapID()

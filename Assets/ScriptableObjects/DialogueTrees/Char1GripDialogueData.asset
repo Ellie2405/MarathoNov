@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: Char1GripDialogueData
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Its been so long since someone talked with me... a 'Newborn' non the
+      less... what do you seek, child?
+    playerOptions:
+    - What.. what are you?
+    - Why are you chained?
+    - Are you this old man's soul?
+    nextDialogueIndex: 010000000400000003000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE are one and the same, i am what he sees, what he feels, i am what
+      he THINKS he is.
+    playerOptions:
+    - I feel like i know you.. like were family..
+    - Why are you chained?
+    - Are you this old man's soul?
+    nextDialogueIndex: 020000000400000003000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: That is a natural feeling once such a strong connection have been made..
+      who knows? perhaps we are family after all...
+    playerOptions:
+    - Why are you chained?
+    - Are you this old man's soul?
+    nextDialogueIndex: 0400000003000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Not quite... i am but a glimpse.. souls are much more difficult than
+      what i am... you will see, one day...
+    playerOptions:
+    - What.. what are you?
+    - Why are you chained?
+    nextDialogueIndex: 0100000004000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE are chained becuase WE chained us, we were free once..
+    playerOptions:
+    - 'Why wont you release youself then? '
+    - Why would you chain yourself.. i dont get it..
+    nextDialogueIndex: 0600000005000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: There are some things that are not ment to be understood. some things
+      just needs to be accepted as they are, young one.
+    playerOptions:
+    - 'Why wont you release youself then? '
+    nextDialogueIndex: 06000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE can not see in the dark.. it is always dark.. even the lamp wont
+      help us anymore...
+    playerOptions:
+    - I wish i could help you...
+    nextDialogueIndex: 07000000
+  - conditions:
+    - condi: 5
+      text: 
+      optionNum: 0
+      num: 0
+    - condi: 5
+      text: 
+      optionNum: 1
+      num: 3
+    requiresGrip: 0
+    dialogue: You can definetly try young one. if you try to connect our souls, you
+      can attempt to alter me... our souls will talk to one another...
+    playerOptions:
+    - I want to help you.. (Attempt alteration)
+    - Im not sure im ready..
+    nextDialogueIndex: 0800000009000000

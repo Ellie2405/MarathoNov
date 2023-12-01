@@ -5,28 +5,42 @@ using TMPro;
 using UnityEngine.EventSystems;
 using System;
 
-public class PlayerDialogueOption : MonoBehaviour, IPointerClickHandler
+public class PlayerDialogueOption : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    static public event Action<int> OnOptionClick;
+    static public event Action<int, int> OnOptionClick;
 
     [SerializeField] TextMeshProUGUI textElement;
     [SerializeField] GameObject graphic;
+    [SerializeField] Transform arrow;
+    [SerializeField] GameObject hover;
     [SerializeField] int ID;
+    [SerializeField] int optionPointer;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnOptionClick.Invoke(ID);
+        OnOptionClick.Invoke(ID, optionPointer);
     }
+
 
     public void SetOption(StringInt reply)
     {
         if (!graphic.activeInHierarchy) graphic.SetActive(true);
         textElement.text = reply.str;
-        ID = reply.i;
+        optionPointer = reply.i;
     }
 
     public void Hide()
     {
         graphic.SetActive(false);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        hover.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        hover.SetActive(false);
     }
 }

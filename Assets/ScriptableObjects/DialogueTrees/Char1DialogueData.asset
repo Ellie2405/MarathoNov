@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
   m_Name: Char1DialogueData
   m_EditorClassIdentifier: 
-  playerOptions:
+  DialogueSteps:
   - conditions: []
     requiresGrip: 0
     dialogue: " Ahh, whats this? these are the eyes of a \u2018Newborn\u2019! i didnt
-      think that THEY are still watching\u2026 interesting.."
-    options:
+      think that THEY are still watching... interesting.."
+    playerOptions:
     - Newborn?
     - Who are you??
     nextDialogueIndex: 0100000002000000
@@ -25,21 +25,21 @@ MonoBehaviour:
     requiresGrip: 0
     dialogue: ' Yes! i am amazed myself that THEY have sent you here, but.. why are
       you here??'
-    options:
-    - "I havnt a clue.. i dont know this place.. or even.. where did i come from\u2026"
+    playerOptions:
+    - I haven't a clue.. i don't know this place.. or even.. where did i come from...
     nextDialogueIndex: 03000000
   - conditions: []
     requiresGrip: 0
     dialogue: ' Me? i am no one of importance, unlike yourself, a Newborn... tell
       me, why are you here child?'
-    options:
-    - "I havnt a clue.. i dont know this place.. or even.. where did i come from\u2026"
+    playerOptions:
+    - I haven't a clue.. i don't know this place.. or even.. where did i come from...
     nextDialogueIndex: 03000000
   - conditions: []
     requiresGrip: 0
-    dialogue: "THEY have sent a \u2018Newborn\u2019 without a memory?.. odd\u2026
-      tell me child, what do you see?"
-    options:
+    dialogue: "THEY have sent a \u2018Newborn\u2019 without a memory?.. odd... tell
+      me child, what do you see?"
+    playerOptions:
     - Its wierd i.. i see everything in a diffrent color then yours, you look.. different?
     - "Who are \u201Cthey\u201D? why are you calling me a \u201CNewborn\u201D i dont
       understand.."
@@ -55,91 +55,83 @@ MonoBehaviour:
       optionNum: 1
       num: 0
     requiresGrip: 0
-    dialogue: "I cant belive this.. THEY have sent an uncompleated one? this must
-      be a mistake\u2026 but then again, THEY dont make mistakes.."
-    options:
+    dialogue: I cant belive this.. THEY have sent an uncompleated one? this must
+      be a mistake... but then again, THEY dont make mistakes..
+    playerOptions:
     - Where are we?
     - What happened here?
-    - "Who are \u201Cthey\u201D? why are you calling me a \u201CNewborn\u201D i dont
-      understand.."
-    nextDialogueIndex: 070000000800000005000000
-  - conditions:
-    - condi: 2
-      text: "\u200BYou feel confused and mostly tierd.. you manage to regain your
-        focus when you notice the ruin infront of you."
-      optionNum: 0
-      num: 0
+    nextDialogueIndex: 0700000008000000
+  - conditions: []
     requiresGrip: 0
     dialogue: 'These are all good questions. questions i cannot answer in this state
       of yours im afraid.. '
-    options:
+    playerOptions:
     - Its wierd i.. i see everything in a diffrent color then yours, you look.. different?
     - Why cant you tell me?
     nextDialogueIndex: 0400000006000000
-  - conditions:
-    - condi: 2
-      text: "\u200BYou feel confused and mostly tierd.. you manage to regain your
-        focus when you notice the ruin infront of you."
-      optionNum: 0
-      num: 0
-    requiresGrip: 0
-    dialogue: "I fear that if you knew, you might \u2018break\u2019. I almost did.."
-    options:
-    - Its wierd i.. i see everything in a diffrent color then yours, you look.. different?
-    nextDialogueIndex: 04000000
   - conditions: []
     requiresGrip: 0
-    dialogue: "We are in \u201CBeladan village\u201D, i honestly can\u2019t say it
-      was once a happy place, but.. it deffinetly was happier then it is today.."
-    options:
-    - Do you maybe know.. who am i?
-    - What happened here?
-    nextDialogueIndex: 0b00000008000000
+    dialogue: "I fear that if you knew, you might \u2018break\u2019. I almost did.."
+    playerOptions:
+    - Its wierd i.. i see everything in a diffrent color then yours, you look.. different?
+    nextDialogueIndex: 04000000
   - conditions:
-    - condi: 1
-      text: "Your head begins to hurt. \u201Cso many questions...\u201D"
-      optionNum: 0
-      num: 0
-    - condi: 1
-      text: "Your head begins to hurt. \u201Cso many questions...\u201D"
+    - condi: 2
+      text: War piece added.
       optionNum: 1
       num: 0
     requiresGrip: 0
-    dialogue: This place was one of the first places that have been destroyed during
+    dialogue: "We are in \u201CBeladan village\u201D, i honestly can\u2019t say it
+      was once a happy place, but.. it deffinetly was happier then it is today.."
+    playerOptions:
+    - Do you maybe know.. who am i?
+    - What happened here?
+    nextDialogueIndex: 0b00000008000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: This place was one of the first places that have been attacked during
       the great war..
-    options:
+    playerOptions:
     - War??
     - Did they.. lose?
     nextDialogueIndex: 090000000a000000
-  - conditions: []
+  - conditions:
+    - condi: 1
+      text: "Your head begins to hurt. \u201Cso many questions...\u201D"
+      optionNum: 0
+      num: 0
     requiresGrip: 0
     dialogue: "Ho yes, and a big one at that, i would imagin a \u2018Newborn\u2019
       such as yourself would not know of that \u2018war\u2019 but i would advise
-      you to take this matter seriusly. you see.. we are standing on the losing side.."
-    options:
+      you to take this matter seriusly."
+    playerOptions:
+    - Do you maybe know.. who am i?
+    nextDialogueIndex: 0b000000
+  - conditions:
+    - condi: 1
+      text: "Your head begins to hurt. \u201Cso many questions...\u201D"
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: "Quite rightfully so.. the king of \u201CBalthas\u201D did not give
+      any choise BUT war."
+    playerOptions:
     - Do you maybe know.. who am i?
     nextDialogueIndex: 0b000000
   - conditions: []
     requiresGrip: 0
-    dialogue: "Quite rightfully so.. the king of \u201CBalthas\u201D did not give
-      any choise BUT war."
-    options:
-    - Do you maybe know.. who am i?
-    nextDialogueIndex: 0b000000
+    dialogue: That my child, i do not know. it is something you will discover on
+      your own. But i do know WHAT you are.
+    playerOptions: []
+    nextDialogueIndex: 
   - conditions:
-    - condi: 0
+    - condi: 4
       text: 
       optionNum: 0
       num: 0
     requiresGrip: 0
-    dialogue: That my child i do not know, it is something you will discover on your
-      own. But i do know WHAT you are.
-    options: []
-    nextDialogueIndex: 
-  - conditions: []
-    requiresGrip: 0
     dialogue: You posses powers that even mages do not understand. you can communicate
       with SOULS. just hold them very firmly and concentrate. here, you can try with
       me.
-    options: []
+    playerOptions: []
     nextDialogueIndex: 

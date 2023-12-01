@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: Char1PostGrip2DialogueData
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I would imagine you have faced quite the beast there have you not?
+      then again.. i would rather you will not say.. i have to say that i do feel
+      like you grabbed a part of me i forgot even existed..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: What ever you have done, or have not done. i thank you non the less...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: I hope you have learned a thing or two child. don't be afraid, people
+      are fascinating creatures, you will see, in time... we shall meet again.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I would imagine you have faced quite the beast there have you not?
+      then again.. i would rather you will not say..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: I hope you have learned a thing or two child. don't be afraid, people
+      are fascinating creatures, you will see, in time... we shall meet again.
+    playerOptions: []
+    nextDialogueIndex: 

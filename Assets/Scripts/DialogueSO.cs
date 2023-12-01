@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DialogueData", menuName = "ScriptableObjects/DialogueDataSO", order = 1)]
 public class DialogueSO : ScriptableObject
 {
-    public List<Array2D> playerOptions;
+    public List<Array2D> DialogueSteps;
 }
 
 [System.Serializable]
@@ -14,7 +14,7 @@ public class Array2D
     public ConditionClass[] conditions;
     public bool requiresGrip;
     public string dialogue;
-    public string[] options;
+    public string[] playerOptions;
     public int[] nextDialogueIndex;
 }
 
@@ -35,5 +35,10 @@ public enum Condition
     Narrator,
     InformationGained,
     InformationReq,
+    EnableGrip,
+    ExitGrip,
     EndingPoint,
+    InformationMiss,
+    PlayerState,
+    EarlyNarrator,
 }

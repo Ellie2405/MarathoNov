@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: Char2GripDialogueData
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions:
+    - condi: 9
+      text: After gripping the dwarf as hard as you could, you see HANDS floating
+        around him..
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Ahh.. someone WE can talk to.. at last..
+    playerOptions:
+    - What are you doing?
+    - Can't you talk to anyone else?
+    nextDialogueIndex: 010000000b000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE are keeping us alive.. OUR hands are so soar.. we can't hold it
+      much longer..WE are keeping us alive.. OUR hands are so sore.. we can't hold
+      it much longer..
+    playerOptions:
+    - What would happen if you stopped?
+    - That looks so.. hard.
+    - Can't you talk to anyone else?
+    nextDialogueIndex: 020000000a0000000b000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: If WE were to stop, this body will tear and melt and die.. WE don't
+      want to die.. WE are just so tired..
+    playerOptions:
+    - I think that.. if you try to see how would you look like if you were to stop..
+    - You look stronger then this.. you wouldn't die..
+    nextDialogueIndex: 0300000007000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE will be so UGLY, we would not have a choice BUT die..
+    playerOptions:
+    - You are beautiful, you just look so tired.. you need to rest!
+    - You look stronger then this.. you wouldn't die..
+    nextDialogueIndex: 0400000007000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE are? WE are tired.. WE don't even remember.. how WE used to look
+      like before all of this..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE know WE were beautiful, WE were..
+    playerOptions:
+    - Why won't you rest, friend?
+    nextDialogueIndex: 06000000
+  - conditions:
+    - condi: 9
+      text: A breeze of dry wind struck you as you have heard a strong echoing exhalation
+        sound..
+      optionNum: 0
+      num: 0
+    - condi: 5
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Hoo.. Rest..
+    playerOptions:
+    - ...
+    nextDialogueIndex: 63000000
+  - conditions:
+    - condi: 9
+      text: A breeze of dry wind struck you as you have heard a strong echoing exhalation
+        sound..
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Ohh.. im am so happy.. if a "Newborn" says we would not die, perhaps
+      WE won't..
+    playerOptions:
+    - I think that.. if you try to see how would you look like if you were to stop..
+    - What do you know about me? about "Newborns"?
+    - You just need to rest, freind..
+    nextDialogueIndex: 030000000800000009000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: You can LOOK through any eyes.. I know that you exist since the dawn
+      of time..
+    playerOptions:
+    - You just need to rest, freind..
+    nextDialogueIndex: 09000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Rest.. WE haven't stopped pressing with our fingers for.. too long..
+    playerOptions:
+    - I think that.. if you try to see how would you look like if you were to stop..
+    - Why do you think that is?
+    nextDialogueIndex: 030000000c000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: It is.. WE are so tired..
+    playerOptions:
+    - What would happen if you stopped?
+    - Can't you talk to anyone else?
+    nextDialogueIndex: 020000000b000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: 'No one have spoken to US in months.. No one want''s too.. '
+    playerOptions:
+    - What are you doing?
+    - Why do you think that is?
+    - You look.. so sad..
+    nextDialogueIndex: 010000000c00000012000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: 'WE lied, WE stole, We broke and WE have broken.. WE did this.. WE
+      don''t deserve any better.. '
+    playerOptions:
+    - Don't you WANT any better?
+    - If that is the case.. maybe you don't..
+    nextDialogueIndex: 0d00000011000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE do..
+    playerOptions:
+    - Choose yourself friend.. if you do so, others will choose you as well.
+    - Then why wont you start doing something about it??
+    nextDialogueIndex: 0e00000010000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Will you choose me, "Newborn"?
+    playerOptions:
+    - Yes i will.
+    - What do you know about me? about "Newborns"
+    nextDialogueIndex: 0600000008000000
+  - conditions:
+    - condi: 5
+      text: 
+      optionNum: 0
+      num: 2
+    requiresGrip: 0
+    dialogue: WE tried everything. There is no more to be done for US.
+    playerOptions:
+    - ...
+    nextDialogueIndex: 63000000
+  - conditions:
+    - condi: 5
+      text: 
+      optionNum: 0
+      num: 2
+    requiresGrip: 0
+    dialogue: Ohh.. WE don't..
+    playerOptions:
+    - ...
+    nextDialogueIndex: 63000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: WE are.. so sad..
+    playerOptions:
+    - What are you doing?
+    - Why do you think that is?
+    nextDialogueIndex: 010000000c000000

@@ -15,18 +15,23 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] Player player;
     int currentMapID;
 
-    [SerializeField] GameObject characterPortrait;
+    [SerializeField] GameObject startDialogueButtons;
+    [SerializeField] GameObject endDialogueButton;
+    [SerializeField] GameObject characterPortraitHolder;
+    [SerializeField] GameObject[] characterPortraits;
+    [SerializeField] GameObject[] grippedPortraits;
+    [SerializeField] GameObject[] worldButtonLayouts;
     [SerializeField] SpriteRenderer Darkening;
+    [SerializeField] FadingUI[] UIElements;
     Color DarkColor = new(0, 0, 0, .8f);
     Color NotDarkColor = new(0, 0, 0, 0);
     [SerializeField] Sprite test;
-    bool isControlEnabled = true;
+    bool isControlEnabled = false;
     bool IsCharacterIn = false;
+    bool dialogueStarted = false;
     public bool IsWaitingForPlayer = false;
 
     [SerializeField] Button gripButton;
-    [SerializeField] SpriteRenderer BG;
-    [SerializeField] Sprite BGNew;
     [SerializeField] Character[] characters;
 
     private void Awake()
@@ -46,20 +51,22 @@ public class GameplayManager : MonoBehaviour
     {
         if (isControlEnabled)
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                if (!IsCharacterIn)
-                {
-                    FadeCharacterIn();
-                }
-                else FadeCharacterOut();
-                IsCharacterIn = !IsCharacterIn;
-            }
+            //if (Input.GetMouseButtonDown(1))
+            //{
+            //    if (!IsCharacterIn)
+            //    {
+            //        FadeCharacterIn();
+            //    }
+            //    else FadeCharacterOut();
+            //    IsCharacterIn = !IsCharacterIn;
+            //}
 
             if (Input.GetMouseButtonDown(0))
             {
                 if (IsCharacterIn)
+                {
                     dm.StepForward();
+                }
             }
         }
     }
@@ -67,9 +74,103 @@ public class GameplayManager : MonoBehaviour
     //on interact with character, hide navigation ui? and display dialogue UI, ready systems and visuals
     public void InteractWithCharacter(int charID)
     {
+        SelectPortrait(charID);
+        dm.ResetSettings();
         dm.SetInteractedChar(characters[charID]);
         FadeCharacterIn();
+        ToggleDialogueVisuals(true);
+        ToggleStartDialogue(true);
+    }
+
+    void SelectPortrait(int ID)
+    {
+        foreach (var item in characterPortraits)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in grippedPortraits)
+        {
+            item.SetActive(false);
+        }
+        characterPortraits[ID].SetActive(true);
+    }
+
+    void SelectGripPortrait(int ID)
+    {
+        foreach (var item in characterPortraits)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in grippedPortraits)
+        {
+            item.SetActive(false);
+        }
+        grippedPortraits[ID].SetActive(true);
+    }
+
+    public void EndInteraction()
+    {
+        tm.ToggleNavigationUI(true);
+        FadeCharacterOut();
+    }
+
+    void ToggleDialogueVisuals(bool state)
+    {
+        foreach (var item in UIElements)
+        {
+            item.gameObject.SetActive(state);
+        }
+        ToggleNavigationUI(!state);
+    }
+
+    public void ToggleNavigationUI(bool state)
+    {
+        worldButtonLayouts[tm.GetCurrentMapID()].SetActive(state);
+    }
+
+    public void ToggleStartDialogue(bool state)
+    {
+        startDialogueButtons.SetActive(state);
+        //if (state == false)
+        //{
+        //    IsCharacterIn = false;
+        //    tm.ToggleNavigationUI(true);
+        //    ToggleDialogueVisuals(false);
+        //    FadeCharacterOut();
+        //}
+    }
+
+    public void StartDialogue() //talk button pressed
+    {
+        dialogueStarted = true;
+        dm.StepForward();
         IsCharacterIn = true;
+        startDialogueButtons.SetActive(false);
+    }
+
+    public void ToggleEndDialogue(bool state)
+    {
+        endDialogueButton.SetActive(state);
+    }
+
+    public void EndDialogue() //leave button pressed
+    {
+        dialogueStarted = false;
+        ToggleStartDialogue(false);
+        ToggleEndDialogue(false);
+        IsCharacterIn = false;
+        tm.ToggleNavigationUI(true);
+        ToggleDialogueVisuals(false);
+        FadeCharacterOut();
+    }
+
+    public void SelectWorldButtonLayout(int index)
+    {
+        foreach (var item in worldButtonLayouts)
+        {
+            item.SetActive(false);
+        }
+        ToggleNavigationUI(true);
     }
 
     public int GetCurrentMapID()
@@ -77,57 +178,59 @@ public class GameplayManager : MonoBehaviour
         return tm.GetCurrentMapID();
     }
 
-    public void ImproveBG()
-    {
-        BG.sprite = BGNew;
-    }
 
-
-    void EnableGrip()
+    public void EnableGrip()
     {
         gripButton.gameObject.SetActive(true);
     }
 
     public void Grip()
     {
+        if (player.isGripping || dm.GetInteractedChar().wasGripped) return;
         isControlEnabled = false;
         player.StartGrip();
-        GripGraphic1();
-        Invoke(nameof(GripGraphic2), 2);
-        //Invoke(nameof(StepForward), 4);
-        isControlEnabled = true;
+        FadeCharacterOut();
+        dm.GetInteractedChar().ApplyGrip();
+        dm.ResetSettings();
+        Invoke(nameof(GripGraphic), 2);
+        //Invoke(nameof(dm.StepForward), 4);
+    }
+
+    public void UnGrip()
+    {
+        isControlEnabled = false;
+        player.EndGrip();
+        FadeCharacterOut();
+        Invoke(nameof(UngripGraphic), 2);
     }
 
     public void FadeCharacterIn()
     {
-        characterPortrait.transform.DOMoveX(6.5f, 2);
-        //Darkening.DOColor(DarkColor, 2);
-        Darken(true);
+        characterPortraitHolder.transform.DOLocalMoveX(700, 2).OnComplete(() => { isControlEnabled = true; if (dialogueStarted) dm.StepForward(); });
     }
 
     public void FadeCharacterOut()
     {
-        characterPortrait.transform.DOMoveX(15, 2).SetEase(Ease.InQuad);
-        //Darkening.DOColor(NotDarkColor, 2);
-        Darken(false);
+        characterPortraitHolder.transform.DOLocalMoveX(1300, 2).SetEase(Ease.InQuad);
     }
 
 
     //dirty
-    public void GripGraphic1()
+    //public void GripGraphic1()
+    //{
+    //    characterPortraitHolder.transform.DOMoveX(15, 2).SetEase(Ease.InQuad);
+    //}
+
+    public void GripGraphic()
     {
-        characterPortrait.transform.DOMoveX(15, 2).SetEase(Ease.InQuad);
-    }
-    public void GripGraphic2()
-    {
-        InteractedChar.SwitchGraphic(1);
-        characterPortrait.transform.DOMoveX(6.5f, 2);
+        SelectGripPortrait(dm.GetInteractedChar().id);
+        FadeCharacterIn();
     }
 
-    public void GripGraphic3()
+    public void UngripGraphic()
     {
-        InteractedChar.SwitchGraphic(0);
-        characterPortrait.transform.DOMoveX(6.5f, 2);
+        SelectPortrait(dm.GetInteractedChar().id);
+        FadeCharacterIn();
     }
 
     void Darken(bool state)

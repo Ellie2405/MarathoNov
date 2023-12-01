@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public int CurrentDialogTree;
+    public int CurrentDialogTree = 0;
     [SerializeField] DialogueSO[] DialogTrees;
-
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] public int id;
     [SerializeField] string characterName;
-    [SerializeField] Sprite[] graphic = new Sprite[2];
-    bool wasGripped = false;
+    [SerializeField] GameObject[] graphic = new GameObject[2];
+    int currentGraphic;
+    public bool wasGripped = false;
     bool isGripped = false;
     bool doneTalking = false;
     public bool hasSomethingToSay = true;
@@ -19,45 +19,67 @@ public class Character : MonoBehaviour
     public List<Vector2> usedDialogOptions = new List<Vector2>();
 
 
-    int currentDialogue = 0;
+    [SerializeField] int currentDialogue = 0;
 
     //add trigger system
     //some chat options will trigger an event - closeness, information, narrator, etc
 
-    private void Start()
+    public void SetDialogueTree(int treeIndex)
     {
-        spriteRenderer.sprite = graphic[0];
+        CurrentDialogTree = treeIndex;
+        hasSomethingToSay = true;
+        currentDialogue = 0;
     }
 
-    public void SetDialogueTree(int index)
+    public void SetDialogueTree(int treeIndex, int chatIndex)
     {
+        CurrentDialogTree = treeIndex;
+        currentDialogue = chatIndex;
 
     }
 
-    public void SwitchGraphic(int index)
+    public bool CheckEnding() 
     {
-        spriteRenderer.sprite = graphic[index];
+        return currentDialogue >= DialogTrees[CurrentDialogTree].DialogueSteps.Count;
+    }
+
+    public bool PeekEnding() //return true if at an ending point
+    {
+        foreach (var item in DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].conditions)
+        {
+            if (item.condi == Condition.EndingPoint)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public string GetDialogue()
     {
         hasSomethingToSay = false;
-        return DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].dialogue;
+        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].dialogue;
     }
 
     public bool CheckGripCondition()
     {
-        return DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].requiresGrip;
+        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].requiresGrip;
+    }
+
+    public int PeekOptions()
+    {
+        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].playerOptions.Length;
     }
 
     public StringInt[] GetAllOptions()
     {
         hasSomethingToSay = true;
-        int optionAmount = DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].options.Length;
+        int optionAmount = DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].playerOptions.Length;
         if (optionAmount == 0) //if there are no options, the character can return an empty array to continue talking
         {
             AddUsedDialog();
             currentDialogue++;
+            //if (currentDialogue >= DialogTrees[CurrentDialogTree].playerOptions.Count)
             return default;
         }
 
@@ -71,7 +93,7 @@ public class Character : MonoBehaviour
 
     StringInt GetOption(int index)
     {
-        return new StringInt(DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].options[index], DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].nextDialogueIndex[index]);
+        return new StringInt(DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].playerOptions[index], DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].nextDialogueIndex[index]);
     }
 
     public void GiveAnswer(int answerNum)
@@ -83,28 +105,30 @@ public class Character : MonoBehaviour
 
     public ConditionClass[] GetAllConditions()
     {
-        return DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].conditions;
+        print(currentDialogue);
+        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].conditions;
     }
 
     //return true if the option has more conditions than index
     public bool CheckOptionConditions(int index)
     {
-        return DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].conditions.Length > index;
+        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].conditions.Length > index;
     }
 
     //return true if the option has at least 1 condition
     public bool CheckOptionConditions()
     {
-        return DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].conditions.Length > 0;
+        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].conditions.Length > 0;
     }
 
     public ConditionClass GetCondition(int index)
     {
-        return DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].conditions[index];
+        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].conditions[index];
     }
 
     void AddUsedDialog()
     {
+        if (PeekEnding()) return;
         usedDialogOptions.Add(new Vector2(CurrentDialogTree, currentDialogue));
     }
 
@@ -113,7 +137,7 @@ public class Character : MonoBehaviour
     {
         foreach (var item in usedDialogOptions)
         {
-            if (item.x == CurrentDialogTree && item.y == DialogTrees[CurrentDialogTree].playerOptions[currentDialogue].nextDialogueIndex[num])
+            if (item.x == CurrentDialogTree && item.y == DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].nextDialogueIndex[num])
             {
                 return true;
             }
@@ -121,6 +145,11 @@ public class Character : MonoBehaviour
         return false;
     }
 
+    public void ApplyGrip()
+    {
+        wasGripped = true;
+        SetDialogueTree(1);
+    }
 }
 
 public struct StringInt

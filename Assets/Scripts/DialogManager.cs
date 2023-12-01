@@ -12,17 +12,25 @@ public class DialogManager : MonoBehaviour
     [SerializeField] PlayerDialogueOption[] options;
     [SerializeField] TextMeshProUGUI EventText;
     [SerializeField] TextMeshProUGUI NarratorText;
+    [SerializeField] TypeWritterVFX typeWriter;
+    string earlyNarratorText;
 
     bool IsWaitingForPlayer = false;
     bool isNarratorQueued = false;
     bool isNarratorSpeaking = false;
+    bool isEarlyNarratorQueued = false;
+    bool isEarlyNarratorSpeaking = false;
     bool isEventQueued = false;
     bool isShowingEventText = false;
     bool areEventsChecked = false;
+    bool isAtEnding = false;
+    bool isTypeWriterReady = true;
+    bool isGripQueued = false;
 
     private void Awake()
     {
-        PlayerDialogueOption.OnOptionClick += pickReply;
+        PlayerDialogueOption.OnOptionClick += PickReply;
+        TypeWritterVFX.CompleteTextRevealed += TextRevealed;
     }
 
     private void Start()
@@ -32,38 +40,92 @@ public class DialogManager : MonoBehaviour
         NarratorText.text = string.Empty;
     }
 
+    public void ResetSettings()
+    {
+        isAtEnding = false;
+        IsWaitingForPlayer = false;
+        HideOptions();
+    }
+
     public void StepForward()
     {
+        if (!isTypeWriterReady) { print("typewriter not ready"); return; }
+        if (InteractedChar.CheckEnding()) { print("ending reached"); return; }
+        if (isAtEnding) { print("ending point"); return; }
+        if (IsWaitingForPlayer) { print("not player turn"); return; }
         if (!areEventsChecked && CheckPrecedingEvents()) //if there is anything that should come before the next chat
         {
             //narrator
             areEventsChecked = true;
-            print("yes");
+            print("Found Preceding Events");
         }
 
         CheckEventText();
-        if (!IsWaitingForPlayer)
+        if (CheckEarlyNarrator()) return;
+        if (InteractedChar.hasSomethingToSay)
+            PrintCharacterDialogue();
+        else
         {
-            if (InteractedChar.hasSomethingToSay)
-                PrintCharacterDialogue();
-            else
+            if (CheckNarrator()) return;
+            GetDialogueOptions();
+        }
+
+    }
+
+    private void TextRevealed()
+    {
+        if (InteractedChar.PeekOptions() == 0 || isNarratorQueued || isEarlyNarratorSpeaking) //if this dialogue step has a narrator or no player options
+        {
+            if (InteractedChar.PeekEnding()) //unless it is an ending point
             {
-                if (CheckNarrator()) return;
-                GetDialogueOptions();
+                isAtEnding = true;
+                isTypeWriterReady = true;
+                GameplayManager.Instance.ToggleEndDialogue(true);
+            }
+            else //delay autostep
+            {
+                StartCoroutine(nameof(GetNextStep));
             }
         }
+        else
+        {
+            isTypeWriterReady = true;
+            StepForward();
+        }
+        if (isGripQueued) EnableGrip();
+    }
+
+    private IEnumerator GetNextStep()
+    {
+        yield return new WaitForSeconds(2);
+        isTypeWriterReady = true;
+        StepForward();
     }
 
     public void SetInteractedChar(Character character)
     {
         InteractedChar = character;
-        InteractedChar.SetDialogueTree(GameplayManager.Instance.GetCurrentMapID());
+        InteractedChar.hasSomethingToSay = true;
+        //InteractedChar.SetDialogueTree(GameplayManager.Instance.GetCurrentMapID());
+        //InteractedChar.SetDialogueTree(0);
+    }
+
+    public Character GetInteractedChar()
+    {
+        return InteractedChar;
     }
 
     //print what the character has to say
     public void PrintCharacterDialogue()
     {
-        characterDialogueBox.text = InteractedChar.GetDialogue();
+        SetCharDialogue(InteractedChar.GetDialogue());
+    }
+
+    void SetCharDialogue(string input)
+    {
+        characterDialogueBox.text = input;
+        typeWriter.Hi();
+        isTypeWriterReady = false;
     }
 
     //print what the player can reply
@@ -75,6 +137,7 @@ public class DialogManager : MonoBehaviour
     //read through the reply options and put them into buttons
     void ParseOptions(StringInt[] playerOptions)
     {
+        areEventsChecked = false;
         if (playerOptions is null) //if received an empty array, show no options and continue to the next step
         {
             StepForward();
@@ -125,7 +188,6 @@ public class DialogManager : MonoBehaviour
         IsWaitingForPlayer = true;
     }
 
-    //returns true if there is a preceding event
     bool CheckPrecedingEvents()
     {
         if (InteractedChar.CheckOptionConditions())
@@ -136,6 +198,15 @@ public class DialogManager : MonoBehaviour
                 {
                     PrintNarrator(item.text);
                     return true;
+                }
+                if (item.condi == Condition.EarlyNarrator)
+                {
+                    PrintEarlyNarrator(item.text);
+                    return true;
+                }
+                if (item.condi == Condition.EnableGrip)
+                {
+                    isGripQueued = true;
                 }
             }
         }
@@ -153,7 +224,7 @@ public class DialogManager : MonoBehaviour
         return true;
     }
 
-    private int[] GetOptionsWithMissingInfo()
+    private int[] GetOptionsWithMissingInfo() //run through the conditions to filter out options that require having or not having information
     {
         List<int> fails = new();
         if (InteractedChar.CheckOptionConditions())
@@ -165,6 +236,11 @@ public class DialogManager : MonoBehaviour
                     if (!player.CheckIfHasInformation(condition.num))
                         fails.Add(condition.optionNum);
                 }
+                if (condition.condi == Condition.InformationMiss)
+                {
+                    if (player.CheckIfHasInformation(condition.num))
+                        fails.Add(condition.optionNum);
+                }
             }
             if (fails.Count > 0)
                 return fails.ToArray();
@@ -172,32 +248,58 @@ public class DialogManager : MonoBehaviour
         return default;
     }
 
-
-
-    public void pickReply(int index)
+    public void PickReply(int index, int pointer)
     {
-        CheckFollowingCondition(index);
-        InteractedChar.GiveAnswer(index);
         IsWaitingForPlayer = false;
-        areEventsChecked = false;
-
+        if (CheckFollowingCondition(index))
+        {
+            InteractedChar.GiveAnswer(pointer);
+            StepForward();
+        }
         HideOptions();
-        StepForward();
+        //areEventsChecked = false;
+
     }
 
-    private void CheckFollowingCondition(int index)
+    private bool CheckFollowingCondition(int index) //returns false if grip exits
     {
         if (InteractedChar.CheckOptionConditions())
         {
             foreach (var item in InteractedChar.GetAllConditions())
             {
-                if (item.condi == Condition.InformationGained)
+                if (item.optionNum == index)
                 {
-                    PrintEventText(item.text);
-                    return;
+                    if (item.condi == Condition.InformationGained)
+                    {
+                        if (!player.CheckIfHasInformation(item.num))
+                        {
+                            player.GainInformation(item.num);
+                            PrintEventText(item.text);
+                        }
+                    }
+
+                    if (item.condi == Condition.PlayerState)
+                    {
+                        player.ChangeCompleteness(item.num > 0);
+                    }
+
+                    if (item.condi == Condition.ExitGrip)
+                    {
+                        print("Exiting grip");
+                        GameplayManager.Instance.UnGrip();
+                        InteractedChar.SetDialogueTree(2, item.num);
+                        return false;
+                    }
                 }
             }
         }
+        return true;
+    }
+
+    void EnableGrip()
+    {
+        isGripQueued = false;
+        GameplayManager.Instance.EnableGrip();
     }
 
     public void HideOptions()
@@ -211,15 +313,24 @@ public class DialogManager : MonoBehaviour
     //handle narrator
     public void PrintNarrator(string text)
     {
+        print("Narrator Queued");
         isNarratorQueued = true;
         NarratorText.text = "Narrator: " + text;
+    }
+
+    public void PrintEarlyNarrator(string text)
+    {
+        print("Early Narrator Queued");
+        isEarlyNarratorQueued = true;
+        earlyNarratorText = "Narrator: " + text;
     }
 
     private bool CheckNarrator()
     {
         if (isNarratorQueued) //activate narrator if he is queued
         {
-            NarratorText.gameObject.SetActive(true);
+            //NarratorText.gameObject.SetActive(true);
+            SetCharDialogue(NarratorText.text);
             isNarratorSpeaking = true;
             isNarratorQueued = false;
             return true;
@@ -228,6 +339,22 @@ public class DialogManager : MonoBehaviour
         {
             NarratorText.gameObject.SetActive(false);
             isNarratorSpeaking = false;
+        }
+        return false;
+    }
+
+    bool CheckEarlyNarrator()
+    {
+        if (isEarlyNarratorQueued) //activate narrator if he is queued
+        {
+            SetCharDialogue(earlyNarratorText);
+            isEarlyNarratorSpeaking = true;
+            isEarlyNarratorQueued = false;
+            return true;
+        }
+        if (isEarlyNarratorSpeaking)
+        {
+            isEarlyNarratorSpeaking = false;
         }
         return false;
     }
