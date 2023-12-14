@@ -118,7 +118,10 @@ public class GameplayManager : MonoBehaviour
     {
         foreach (var item in UIElements)
         {
-            item.gameObject.SetActive(state);
+            if (state)
+                item.gameObject.SetActive(true);
+            else
+                item.Hide();
         }
         ToggleNavigationUI(!state);
     }
@@ -211,7 +214,7 @@ public class GameplayManager : MonoBehaviour
 
     public void FadeCharacterOut()
     {
-        characterPortraitHolder.transform.DOLocalMoveX(1300, 2).SetEase(Ease.InQuad);
+        characterPortraitHolder.transform.DOLocalMoveX(1500, 2).SetEase(Ease.InQuad);
     }
 
 
