@@ -1,0 +1,536 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: DaimorDialogue
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Hmm? need anything?
+    playerOptions:
+    - Ahh, no.. nothing really..
+    - Your eye, your hands.. You seem like you have gone through a lot..
+    - I'm looking for answers...
+    nextDialogueIndex: 01000000160000003a000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Move along kid, I have no time for the useless.
+    playerOptions:
+    - I have no place to go..
+    nextDialogueIndex: 02000000
+  - conditions:
+    - condi: 1
+      text: You see the strong tall man in front of you stopping in its place, like
+        hearing a voice he already forgot long ago..
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: '*sigh*'
+    playerOptions: []
+    nextDialogueIndex: 03000000
+  - conditions:
+    - condi: 9
+      text: He then turns his head back, looking at you with what seems to be an
+        apologetic expression
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: 'Lost your folks in the war have you.. '
+    playerOptions:
+    - (Nod in acceptance)
+    - No I.. I don't think I have ever had any.
+    nextDialogueIndex: 0400000009000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: How many more orphan children do I need to see before this ends..
+    playerOptions: []
+    nextDialogueIndex: 0000000000000000000000000000000000000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: You can call me "Daimor". If you have no other place to go, you can
+      come with me.. I have some business on the refugee camp north east from here.
+    playerOptions:
+    - '*Nod in acceptance*(Join him)'
+    - No thanks.. I'll manage.
+    nextDialogueIndex: 0600000007000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: 'Alright.. Come along now kid. Not gonna lower my pace for ya! '
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: May the gods offer you another road then... Stay safe kid.
+    playerOptions:
+    - (Leave)
+    - I'm looking for answers...
+    nextDialogueIndex: 080000003a000000
+  - conditions:
+    - condi: 6
+      text: ...
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: 
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Have never had any?? Every human being at least had kid.. Maybe a loss
+      of a memory is to blame..
+    playerOptions:
+    - I really am not sure of what happened before.. Any of this.
+    - (Be honest) A man in robes told me I was sent here..
+    nextDialogueIndex: 0a0000000c000000
+  - conditions:
+    - condi: 1
+      text: The man Looks at you one last time. you feel like he is angry, angry
+        for what he said to you. You wonder why that is...
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Well kid, this world can be tough, I do hope you find your way..
+    playerOptions:
+    - (Leave)
+    - (Be honest) A man in robes told me I was sent here..
+    - I'm looking for answers...
+    nextDialogueIndex: 0b000000
+  - conditions:
+    - condi: 6
+      text: ...
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: A man with robes? that doesn't narrow it down at all. Do you know his
+      name?
+    playerOptions:
+    - (Lie) Yes but I can't say
+    - (Be honest) No
+    - (Be honest) No, but he said I am a "Newborn". Do you know anything about that?
+    nextDialogueIndex: 0d0000000e00000014000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Did he threaten you kid? Ah.. It doesn't matter, who sent you then?
+    playerOptions:
+    - (Lie) Someone dangerous..
+    - (Be honest) I.. don't know yet.
+    nextDialogueIndex: 0f00000013000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Well, who sent you then?
+    playerOptions:
+    - (Lie) Someone dangerous..
+    - (Be honest) I.. don't know yet.
+    nextDialogueIndex: 0f00000013000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Dangerous you say... *sigh* Ok then, you can stick with me. No matter
+      what it is, it wont pass me so easily..
+    playerOptions:
+    - '*Nod in acceptance*(Join him)'
+    - No thanks.. I'll manage.
+    nextDialogueIndex: 1000000011000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Alright.. Come along now kid. Not gonna lower my pace for ya!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: May the gods offer you another road then... Stay safe kid.
+    playerOptions:
+    - (Leave)
+    - I'm looking for answers...
+    nextDialogueIndex: 120000003a000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Sounds compilated kid, I can't help you.
+    playerOptions:
+    - I'm looking for answers...
+    nextDialogueIndex: 3a000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Huh you are just a kid after all, maybe that man have lost his senses..
+      Happens these days more then you know..
+    playerOptions:
+    - Ok then, I'll be on my way. (Leave)
+    - I'm looking for answers...
+    nextDialogueIndex: 150000003a000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: 'Why you.. Do u know to whom you speak?? I am th.. (he pauses) '
+    playerOptions:
+    - Really? Where??
+    - Tell me then.. Who are you?
+    nextDialogueIndex: 1700000034000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I can't say I remember where.. But they feel so familiar.. Blank white
+      eyes with a blue pupil, you don't see that everyday..
+    playerOptions:
+    - Familiar? I'm sure I have never met you before.
+    - Was it by any chance an old man with a hood?
+    nextDialogueIndex: 1800000019000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: And I you.. I have seen them long before you were born. Of that I'm
+      sure!  Those eyes of yours.. They make me feel acknowledged for some reason..
+    playerOptions: []
+    nextDialogueIndex: 1a000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: You have just described half of the old people here, kid. Those eyes
+      of yours.. They make me feel acknowledged for some reason..
+    playerOptions: []
+    nextDialogueIndex: 1a000000
+  - conditions:
+    - condi: 1
+      text: The man held his head as if checking for a fever.  A surprised look covered
+        his face..
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: But you are just a kid I met on the road.. maybe this whole thing is
+      getting in my head..
+    playerOptions: []
+    nextDialogueIndex: 1b000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I remember now! it was at THAT night! It all makes sense now huh..
+      Thought I lost it there for a moment.
+    playerOptions:
+    - (Get a little excited) What night? Who was it??
+    - Why are they so important to you?
+    nextDialogueIndex: 1c0000002e000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Huh? what makes you think I owe any answers to you kid?
+    playerOptions:
+    - You don't, its just that.. It's somehow connected to me..
+    - You don't have to be so defensive about it..
+    - Fine, don't tell me then. (Leave)
+    nextDialogueIndex: 1d0000002c0000002d000000
+  - conditions:
+    - condi: 0
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Connected to you?
+    playerOptions:
+    - I'm just lost, I don't know what I should do..
+    nextDialogueIndex: 1e000000
+  - conditions:
+    - condi: 1
+      text: As his lips opened for a quick response, they then slowly reunited without
+        making a sound.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 1f000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: '*sigh* Ok kid, you''ve got me. It was one of my first battles, the
+      one I have decided to take the path of the sword, but really it was all but
+      a whim of stupidity and youth!'
+    playerOptions: []
+    nextDialogueIndex: 20000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: 'At that night I almost died on the attack of woodland bandits near
+      my village, a man holding the most rusty sword I have ever seen looked at me
+      with those eyes. '
+    playerOptions: []
+    nextDialogueIndex: 21000000
+  - conditions:
+    - condi: 1
+      text: Your eyes glow from excitement as he told you his tale, your body moved
+        on its own with every detailed piece of information, he noticed that.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: It felt like time stopped existing, there was nothing intron nor behind
+      me. Just me and him. I felt like I have been there in ages, but.. Now that
+      I think of it.. When it ended I.. I never thought of it again..
+    playerOptions:
+    - (Get excited) How did you escape the bandits then?
+    - Did that also happened when you looked at my eyes?
+    nextDialogueIndex: 2200000024000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I didn't. *grin*
+    playerOptions:
+    - (Get more excited) That is the best thing I have heard! I want my eyes to give
+      powers to others too!
+    - Did that also happened when you looked at my eyes?
+    nextDialogueIndex: 2300000024000000
+  - conditions:
+    - condi: 1
+      text: Somehow you are convinced that this interaction is the reason for this
+        man's unusual strength.
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Give powers? Who said that he gave me powers?? My power is my own!
+    playerOptions:
+    - Did that also happened when you looked at my eyes?
+    nextDialogueIndex: 24000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: No, but it did make me feel something, it made me remember that I did
+      see them before.
+    playerOptions: []
+    nextDialogueIndex: 25000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: 'So, thanks kid but I think ill be on my way now.. '
+    playerOptions:
+    - Can I come with you?
+    - Wait! Where are you going to next?
+    - Ho ok then. Thank you for telling me that story!
+    nextDialogueIndex: 26000000290000002b000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Maybe another time kid..
+    playerOptions:
+    - Ok.. Thank you.. Mister!  (Leave)
+    - (Follow him)
+    nextDialogueIndex: 2700000028000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: You can call me Daimor, if our paths will ever cross again that is..
+      Good luck kid.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I mean it kid!
+    playerOptions:
+    - Why there?
+    nextDialogueIndex: 2a000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: '*sigh* I''m going to the refugee camp. Don''t follow me kid.'
+    playerOptions:
+    - (Follow him)
+    - Why there?
+    nextDialogueIndex: 280000002a000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: '*sigh* You ask too many questions kid. If you ever find that man you
+      spoke of, ask around for me, ill get to you. My name is "Daimor".'
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Defensive, Huh, You have got some nerve.. Maybe that is why we are
+      still having this conversation. Ok kid, I'll tell you something.
+    playerOptions: []
+    nextDialogueIndex: 20000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Who said they were? We all look for solace from time to time, what
+      I felt when looking at them, it is exactly that.
+    playerOptions: []
+    nextDialogueIndex: 2f000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Look kid, I need to get going, got some place to be.. One piece of
+      advice though, if you are planning of leaving this place, don't go to the city.
+    playerOptions:
+    - The city? You mean Stathmore?
+    - Why?
+    nextDialogueIndex: 3000000031000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Huh, you speak as though you have been to others! Yes, of course I
+      mean Strathmore.
+    playerOptions:
+    - Why?
+    nextDialogueIndex: 31000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Just don't. Things have caused this place to be quite a dangerous place,
+      especially for a kid. Take care now..
+    playerOptions:
+    - Wait! What's your name?
+    - (Leave)
+    nextDialogueIndex: 3200000033000000
+  - conditions:
+    - condi: 1
+      text: He left and didn't even ask yours, how rude.
+      optionNum: 0
+      num: 0
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Daimor..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: Just don't. Things have caused this place to be quite a dangerous place,
+      especially for a kid. Take care now..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I am Daimor, an adventurer.. Or at least I was.. Now I'm not so sure.
+    playerOptions:
+    - What made you question that?
+    - Then maybe you can help me.. Do you know what is a 'Newborn'?
+    nextDialogueIndex: 3500000039000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: The war did.. It's strange, your eyes makes me feel calm.. I am rarely
+      calm these days..
+    playerOptions:
+    - Did you lose something?
+    - You are not the first to say that.. I wonder what is so special about them..
+    nextDialogueIndex: 3600000038000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: We all have.. I have some places to go to..
+    playerOptions:
+    - Ok then, I wont bother you.. (Leave)
+    - You are not the first to say that.. I wonder what is so special about them..
+    nextDialogueIndex: 3700000038000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Can't say for sure, but I can tell you they are not some normal pair
+      of eyes.. I'm sure I have seen them before..
+    playerOptions:
+    - Really? Where??
+    nextDialogueIndex: 17000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Never heard of them.
+    playerOptions:
+    - What made you question that?
+    nextDialogueIndex: 35000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Answers you say? And what makes you think I posses any?
+    playerOptions:
+    - Your the only man here that looks like he doesn't belong.. Much like me.
+    - Something about you.. I can see it.
+    nextDialogueIndex: 3b0000003f000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Don't compare yourself to me kid. You have no idea what its like..
+      To be me..
+    playerOptions:
+    - I think that.. I can help you... If you let me.
+    - I'm sorry I didn't mean to upset you..
+    nextDialogueIndex: 3c0000003d000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Help me?? Who do you thi.. (he turns to look at you) Those eyes.. I'm
+      sure I have seen them before..
+    playerOptions:
+    - Really? Where??
+    nextDialogueIndex: 17000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: Move along kid.. I have no time to waste.
+    playerOptions:
+    - Ok then, I'll be on my way. (Leave)
+    - I think that.. I can help you... If you let me.
+    nextDialogueIndex: 3e0000003c000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: ...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: 
+    playerOptions: []
+    nextDialogueIndex: 
