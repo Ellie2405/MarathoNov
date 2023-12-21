@@ -18,9 +18,9 @@ public class PlayerDialogueOption : MonoBehaviour, IPointerClickHandler, IPointe
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sounds.OptionPick);
         OnOptionClick.Invoke(ID, optionPointer);
     }
-
 
     public void SetOption(StringInt reply)
     {
@@ -36,6 +36,7 @@ public class PlayerDialogueOption : MonoBehaviour, IPointerClickHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sounds.OptionHover);
         hover.SetActive(true);
     }
 

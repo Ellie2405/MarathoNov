@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
-  m_Name: Char3DialogueData
+  m_Name: DaimorPostGripDialogue
   m_EditorClassIdentifier: 
   DialogueSteps:
+  - conditions: []
+    requiresGrip: 0
+    dialogue: The hell are you doing??
+    playerOptions: []
+    nextDialogueIndex: 
   - conditions:
     - condi: 6
       text: 
       optionNum: 0
       num: 0
     requiresGrip: 0
-    dialogue: Move along kid!
+    dialogue: Move along kid! I have no further interest in you...
     playerOptions: []
     nextDialogueIndex: 

@@ -49,10 +49,10 @@ public class DialogManager : MonoBehaviour
 
     public void StepForward()
     {
-        if (!isTypeWriterReady) { print("typewriter not ready"); return; }
-        if (InteractedChar.CheckEnding()) { print("ending reached"); return; }
-        if (isAtEnding) { print("ending point"); return; }
-        if (IsWaitingForPlayer) { print("not player turn"); return; }
+        if (!isTypeWriterReady) { print("typewriter not ready"); return; } //leave if currently printing
+        if (InteractedChar.CheckEnding()) { print("ending reached"); return; } //leave if at end of character dialogue
+        if (isAtEnding) { print("ending point"); return; } //leave if at ending point condition
+        if (IsWaitingForPlayer) { print("not player turn"); return; } //leave if waiting for choice
         if (!areEventsChecked && CheckPrecedingEvents()) //if there is anything that should come before the next chat
         {
             //narrator
@@ -82,7 +82,7 @@ public class DialogManager : MonoBehaviour
                 isTypeWriterReady = true;
                 GameplayManager.Instance.ToggleEndDialogue(true);
             }
-            else //delay autostep
+            else //autostep
             {
                 StartCoroutine(nameof(GetNextStep));
             }
@@ -99,7 +99,7 @@ public class DialogManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         isTypeWriterReady = true;
-        StepForward();
+        //StepForward();
     }
 
     public void SetInteractedChar(Character character)

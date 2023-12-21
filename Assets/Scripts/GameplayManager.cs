@@ -27,6 +27,7 @@ public class GameplayManager : MonoBehaviour
     Color NotDarkColor = new(0, 0, 0, 0);
     [SerializeField] Sprite test;
     bool isControlEnabled = false;
+    bool isGripEnabled = false;
     bool IsCharacterIn = false;
     bool dialogueStarted = false;
     public bool IsWaitingForPlayer = false;
@@ -123,12 +124,21 @@ public class GameplayManager : MonoBehaviour
             else
                 item.Hide();
         }
-        ToggleNavigationUI(!state);
+        if (state)
+            ToggleNavigationUI(!state);
+        else
+            StartCoroutine(nameof(ToggleNavUI));
     }
 
     public void ToggleNavigationUI(bool state)
     {
         worldButtonLayouts[tm.GetCurrentMapID()].SetActive(state);
+    }
+
+    IEnumerator ToggleNavUI()
+    {
+        yield return new WaitForSeconds(1);
+        ToggleNavigationUI(true);
     }
 
     public void ToggleStartDialogue(bool state)
@@ -145,6 +155,7 @@ public class GameplayManager : MonoBehaviour
 
     public void StartDialogue() //talk button pressed
     {
+        if(isGripEnabled) gripButton.gameObject.SetActive(true);
         dialogueStarted = true;
         dm.StepForward();
         IsCharacterIn = true;
@@ -161,6 +172,7 @@ public class GameplayManager : MonoBehaviour
         dialogueStarted = false;
         ToggleStartDialogue(false);
         ToggleEndDialogue(false);
+        gripButton.gameObject.SetActive(false);
         IsCharacterIn = false;
         tm.ToggleNavigationUI(true);
         ToggleDialogueVisuals(false);
@@ -185,12 +197,15 @@ public class GameplayManager : MonoBehaviour
     public void EnableGrip()
     {
         gripButton.gameObject.SetActive(true);
+        isGripEnabled = true;
     }
 
     public void Grip()
     {
         if (player.isGripping || dm.GetInteractedChar().wasGripped) return;
         isControlEnabled = false;
+        ToggleStartDialogue(false);
+        ToggleEndDialogue(false);
         player.StartGrip();
         FadeCharacterOut();
         dm.GetInteractedChar().ApplyGrip();

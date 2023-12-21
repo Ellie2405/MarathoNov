@@ -234,7 +234,11 @@ MonoBehaviour:
       getting in my head..
     playerOptions: []
     nextDialogueIndex: 1b000000
-  - conditions: []
+  - conditions:
+    - condi: 2
+      text: '"City warning"  piece added'
+      optionNum: 1
+      num: 3
     requiresGrip: 0
     dialogue: I remember now! it was at THAT night! It all makes sense now huh..
       Thought I lost it there for a moment.
@@ -242,7 +246,11 @@ MonoBehaviour:
     - (Get a little excited) What night? Who was it??
     - Why are they so important to you?
     nextDialogueIndex: 1c0000002e000000
-  - conditions: []
+  - conditions:
+    - condi: 2
+      text: '"His eyes" piece added'
+      optionNum: 1
+      num: 1
     requiresGrip: 0
     dialogue: Huh? what makes you think I owe any answers to you kid?
     playerOptions:
@@ -251,10 +259,10 @@ MonoBehaviour:
     - Fine, don't tell me then. (Leave)
     nextDialogueIndex: 1d0000002c0000002d000000
   - conditions:
-    - condi: 0
-      text: 
+    - condi: 2
+      text: '"His eyes" piece added'
       optionNum: 0
-      num: 0
+      num: 1
     requiresGrip: 0
     dialogue: Connected to you?
     playerOptions:
@@ -298,7 +306,11 @@ MonoBehaviour:
     - (Get excited) How did you escape the bandits then?
     - Did that also happened when you looked at my eyes?
     nextDialogueIndex: 2200000024000000
-  - conditions: []
+  - conditions:
+    - condi: 2
+      text: '"Eye powers" piece added'
+      optionNum: 0
+      num: 2
     requiresGrip: 0
     dialogue: I didn't. *grin*
     playerOptions:

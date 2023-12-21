@@ -30,6 +30,7 @@ public class TravelManager : MonoBehaviour
         GameplayManager.Instance.ToggleNavigationUI(false);
         if (!isMapChanging)
         {
+            SoundManager.Instance.PlayTransitionSound();
             BG.DOColor(Color.black, 1.2f).SetLoops(2, LoopType.Yoyo).OnComplete(() => ChangeMapComplete());
             nextMap = mapID;
             isMapChanging = true;
@@ -51,7 +52,7 @@ public class TravelManager : MonoBehaviour
 
     public void ToggleNavigationUI(bool toggle)
     {
-        NavigationUI.SetActive(toggle);
+        //NavigationUI.SetActive(toggle);
     }
 
     void ChangeMapSprite()
