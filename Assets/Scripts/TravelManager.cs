@@ -27,6 +27,7 @@ public class TravelManager : MonoBehaviour
 
     public void ChangeMap(int mapID)
     {
+        //remove the blow line and instead activate a transition animation, will be highest layer and block raycast
         GameplayManager.Instance.ToggleNavigationUI(false);
         if (!isMapChanging)
         {

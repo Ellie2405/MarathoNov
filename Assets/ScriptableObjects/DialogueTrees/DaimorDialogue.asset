@@ -198,7 +198,8 @@ MonoBehaviour:
     nextDialogueIndex: 
   - conditions: []
     requiresGrip: 0
-    dialogue: 'Why you.. Do u know to whom you speak?? I am th.. (he pauses) '
+    dialogue: 'Why you.. Do u know to whom you speak?? I am th.. (he pauses) those
+      eyes.. I''ve seen them before.. '
     playerOptions:
     - Really? Where??
     - Tell me then.. Who are you?
@@ -210,7 +211,7 @@ MonoBehaviour:
     playerOptions:
     - Familiar? I'm sure I have never met you before.
     - Was it by any chance an old man with a hood?
-    nextDialogueIndex: 1800000019000000
+    nextDialogueIndex: 4000000019000000
   - conditions: []
     requiresGrip: 0
     dialogue: And I you.. I have seen them long before you were born. Of that I'm
@@ -233,7 +234,7 @@ MonoBehaviour:
     dialogue: But you are just a kid I met on the road.. maybe this whole thing is
       getting in my head..
     playerOptions: []
-    nextDialogueIndex: 1b000000
+    nextDialogueIndex: 
   - conditions:
     - condi: 2
       text: '"City warning"  piece added'
@@ -543,6 +544,32 @@ MonoBehaviour:
     nextDialogueIndex: 
   - conditions: []
     requiresGrip: 0
-    dialogue: 
+    dialogue: 'See it? (He looks at your eyes) those eyes.. I''ve seen them before.. '
+    playerOptions:
+    - Really? Where??
+    nextDialogueIndex: 17000000
+  - conditions: []
+    requiresGrip: 0
+    dialogue: And I you.. I have seen them long before you were born. Of that I'm
+      sure!  Those eyes of yours.. They make me feel acknowledged for some reason..
     playerOptions: []
     nextDialogueIndex: 
+  - conditions:
+    - condi: 1
+      text: The man held his head as if checking for a fever.  A surprised look covered
+        his face..
+      optionNum: 0
+      num: 0
+    requiresGrip: 0
+    dialogue: But you are just a kid I met on the road.. maybe this whole thing is
+      getting in my head..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    requiresGrip: 0
+    dialogue: I remember now! it was at THAT night! It all makes sense now huh..
+      Thought I lost it there for a moment.
+    playerOptions:
+    - (Get a little excited) What night? Who was it??
+    - Why are they so important to you?
+    nextDialogueIndex: 1c0000002e000000
