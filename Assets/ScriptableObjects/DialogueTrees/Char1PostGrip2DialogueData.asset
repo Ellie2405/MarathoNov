@@ -15,14 +15,14 @@ MonoBehaviour:
   DialogueSteps:
   - conditions: []
     requiresGrip: 0
-    dialogue: I would imagine you have faced quite the beast there have you not?
-      then again.. i would rather you will not say.. i have to say that i do feel
-      like you grabbed a part of me i forgot even existed..
+    dialogue: I would imagine you have faced quite the beast there, have you not?
+      Then again.. I would rather you will not say.. I have to say that I do feel
+      like you grabbed a part of me I forgot even existed..
     playerOptions: []
     nextDialogueIndex: 
   - conditions: []
     requiresGrip: 0
-    dialogue: What ever you have done, or have not done. i thank you non the less...
+    dialogue: What ever you have done, or have not done. I thank you nonetheless...
     playerOptions: []
     nextDialogueIndex: 
   - conditions:
@@ -31,14 +31,14 @@ MonoBehaviour:
       optionNum: 0
       num: 0
     requiresGrip: 0
-    dialogue: I hope you have learned a thing or two child. don't be afraid, people
-      are fascinating creatures, you will see, in time... we shall meet again.
+    dialogue: I hope you have learned a thing or two child. Don't be afraid, people
+      are fascinating creatures, you will see, in time... We shall meet again.
     playerOptions: []
     nextDialogueIndex: 
   - conditions: []
     requiresGrip: 0
     dialogue: I would imagine you have faced quite the beast there have you not?
-      then again.. i would rather you will not say..
+      Then again.. I would rather you will not say..
     playerOptions: []
     nextDialogueIndex: 
   - conditions:
@@ -47,7 +47,7 @@ MonoBehaviour:
       optionNum: 0
       num: 0
     requiresGrip: 0
-    dialogue: I hope you have learned a thing or two child. don't be afraid, people
-      are fascinating creatures, you will see, in time... we shall meet again.
+    dialogue: I hope you have learned a thing or two child. Don't be afraid, people
+      are fascinating creatures, you will see, in time... We shall meet again.
     playerOptions: []
     nextDialogueIndex: 

@@ -15,55 +15,55 @@ MonoBehaviour:
   DialogueSteps:
   - conditions: []
     requiresGrip: 0
-    dialogue: Its been so long since someone talked with me... a 'Newborn' non the
-      less... what do you seek, child?
+    dialogue: Its been so long since someone talked with me... A 'Newborn' non the
+      less... What do you seek, child?
     playerOptions:
-    - What.. what are you?
+    - What.. What are you?
     - Why are you chained?
     - Are you this old man's soul?
     nextDialogueIndex: 010000000400000003000000
   - conditions: []
     requiresGrip: 0
-    dialogue: WE are one and the same, i am what he sees, what he feels, i am what
+    dialogue: WE are one and the same, I am what he sees, what he feels, I am what
       he THINKS he is.
     playerOptions:
-    - I feel like i know you.. like were family..
+    - I feel like I know you.. Like were family..
     - Why are you chained?
     - Are you this old man's soul?
     nextDialogueIndex: 020000000400000003000000
   - conditions: []
     requiresGrip: 0
     dialogue: That is a natural feeling once such a strong connection have been made..
-      who knows? perhaps we are family after all...
+      Who knows? Perhaps we are family after all...
     playerOptions:
     - Why are you chained?
     - Are you this old man's soul?
     nextDialogueIndex: 0400000003000000
   - conditions: []
     requiresGrip: 0
-    dialogue: Not quite... i am but a glimpse.. souls are much more difficult than
-      what i am... you will see, one day...
+    dialogue: Not quite... I am but a glimpse.. Souls are much more difficult than
+      what I am... You will see, one day...
     playerOptions:
-    - What.. what are you?
+    - What.. What are you?
     - Why are you chained?
     nextDialogueIndex: 0100000004000000
   - conditions: []
     requiresGrip: 0
-    dialogue: WE are chained becuase WE chained us, we were free once..
+    dialogue: WE are chained because WE chained us, we were free once..
     playerOptions:
     - 'Why wont you release youself then? '
-    - Why would you chain yourself.. i dont get it..
+    - Why would you chain yourself.. I don't get it..
     nextDialogueIndex: 0600000005000000
   - conditions: []
     requiresGrip: 0
-    dialogue: There are some things that are not ment to be understood. some things
+    dialogue: There are some things that are not meant to be understood. Some things
       just needs to be accepted as they are, young one.
     playerOptions:
     - 'Why wont you release youself then? '
     nextDialogueIndex: 06000000
   - conditions: []
     requiresGrip: 0
-    dialogue: WE can not see in the dark.. it is always dark.. even the lamp wont
+    dialogue: WE can not see in the dark.. It is always dark.. Even the lamp wont
       help us anymore...
     playerOptions:
     - I wish i could help you...
@@ -78,8 +78,8 @@ MonoBehaviour:
       optionNum: 1
       num: 3
     requiresGrip: 0
-    dialogue: You can definetly try young one. if you try to connect our souls, you
-      can attempt to alter me... our souls will talk to one another...
+    dialogue: You can definitely try young one. If you try to connect our souls,
+      you can attempt to alter me... Our souls will talk to one another...
     playerOptions:
     - I want to help you.. (Attempt alteration)
     - Im not sure im ready..
