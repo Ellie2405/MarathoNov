@@ -8,13 +8,8 @@ public class Character : MonoBehaviour
     [SerializeField] DialogueSO[] DialogTrees;
     [SerializeField] public int id;
     [SerializeField] string characterName;
-    [SerializeField] GameObject[] graphic = new GameObject[2];
-    int currentGraphic;
     public bool wasGripped = false;
-    bool isGripped = false;
-    bool doneTalking = false;
     public bool hasSomethingToSay = true;
-    int completeness;
     [SerializeField] int closeness = 0;
     public List<Vector2> usedDialogOptions = new List<Vector2>();
 
@@ -59,11 +54,6 @@ public class Character : MonoBehaviour
     {
         hasSomethingToSay = false;
         return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].dialogue;
-    }
-
-    public bool CheckGripCondition()
-    {
-        return DialogTrees[CurrentDialogTree].DialogueSteps[currentDialogue].requiresGrip;
     }
 
     public int PeekOptions()

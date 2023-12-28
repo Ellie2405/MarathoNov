@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueSteps:
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: dialogue 0...
     playerOptions: []
     nextDialogueIndex: 
@@ -27,7 +27,7 @@ MonoBehaviour:
       text: BIG
       optionNum: 0
       num: 0
-    requiresGrip: 0
+    verull: 0
     dialogue: dialogue 1...
     playerOptions:
     - hi
@@ -42,7 +42,7 @@ MonoBehaviour:
       text: 
       optionNum: 2
       num: 0
-    requiresGrip: 0
+    verull: 0
     dialogue: dialogue 1...
     playerOptions:
     - always appear
@@ -50,7 +50,15 @@ MonoBehaviour:
     - info missing
     nextDialogueIndex: 020000000300000004000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
+    dialogue: dialogue 0...
+    playerOptions:
+    - always appear
+    - has info
+    - info missing
+    nextDialogueIndex: 020000000300000004000000
+  - conditions: []
+    verull: 0
     dialogue: dialogue 0...
     playerOptions:
     - always appear

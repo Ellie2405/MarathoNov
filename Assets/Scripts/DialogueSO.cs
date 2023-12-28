@@ -12,7 +12,7 @@ public class DialogueSO : ScriptableObject
 public class Array2D
 {
     public ConditionClass[] conditions;
-    public bool requiresGrip;
+    public int verull;
     public string dialogue;
     public string[] playerOptions;
     public int[] nextDialogueIndex;
