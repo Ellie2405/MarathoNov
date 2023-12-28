@@ -15,7 +15,8 @@ MonoBehaviour:
   DialogueSteps:
   - conditions: []
     requiresGrip: 0
-    dialogue: What are you doing little man? your hand is so warm.. hm..
+    dialogue: What are you doing little man? your hand is so warm.. Hm.. I think
+      its time ill head to the city! Thank you.. Little man.
     playerOptions: []
     nextDialogueIndex: 
   - conditions:
@@ -24,12 +25,12 @@ MonoBehaviour:
       optionNum: 0
       num: 0
     requiresGrip: 0
-    dialogue: I think its time ill head to the city! thank you.. little man.
+    dialogue: I think its time I'll head to the city! Quite .. Little man.
     playerOptions: []
     nextDialogueIndex: 
   - conditions: []
     requiresGrip: 0
-    dialogue: What are you doing little man?! your hand is so.. cold.. i feel so
+    dialogue: What are you doing little man?! Your hand is so.. cold.. I feel so
       cold..
     playerOptions: []
     nextDialogueIndex: 

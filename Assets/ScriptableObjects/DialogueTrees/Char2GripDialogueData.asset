@@ -20,39 +20,38 @@ MonoBehaviour:
       optionNum: 0
       num: 0
     requiresGrip: 0
-    dialogue: Ahh.. someone WE can talk to.. at last..
+    dialogue: Ahh.. Someone WE can talk to.. At last..
     playerOptions:
     - What are you doing?
     - Can't you talk to anyone else?
     nextDialogueIndex: 010000000b000000
   - conditions: []
     requiresGrip: 0
-    dialogue: WE are keeping us alive.. OUR hands are so soar.. we can't hold it
-      much longer..WE are keeping us alive.. OUR hands are so sore.. we can't hold
-      it much longer..
+    dialogue: WE are keeping us alive.. OUR hands are so sore.. We can't hold it
+      much longer..
     playerOptions:
     - What would happen if you stopped?
-    - That looks so.. hard.
+    - That looks so.. Hard.
     - Can't you talk to anyone else?
     nextDialogueIndex: 020000000a0000000b000000
   - conditions: []
     requiresGrip: 0
-    dialogue: If WE were to stop, this body will tear and melt and die.. WE don't
-      want to die.. WE are just so tired..
+    dialogue: If WE were to stop, this body will tear, melt and die.. WE don't want
+      to die.. WE are just so tired..
     playerOptions:
-    - I think that.. if you try to see how would you look like if you were to stop..
-    - You look stronger then this.. you wouldn't die..
+    - I think that.. If you try to see how you would look like if you were to stop..
+    - You look stronger than this.. You wouldn't die..
     nextDialogueIndex: 0300000007000000
   - conditions: []
     requiresGrip: 0
     dialogue: WE will be so UGLY, we would not have a choice BUT die..
     playerOptions:
-    - You are beautiful, you just look so tired.. you need to rest!
-    - You look stronger then this.. you wouldn't die..
+    - You are beautiful, you just look so tired.. You need to rest!
+    - You look stronger than this.. You wouldn't die..
     nextDialogueIndex: 0400000007000000
   - conditions: []
     requiresGrip: 0
-    dialogue: WE are? WE are tired.. WE don't even remember.. how WE used to look
+    dialogue: WE are? WE are tired.. WE don't even remember.. How WE used to look
       like before all of this..
     playerOptions: []
     nextDialogueIndex: 
@@ -84,12 +83,12 @@ MonoBehaviour:
       optionNum: 0
       num: 0
     requiresGrip: 0
-    dialogue: Ohh.. im am so happy.. if a "Newborn" says we would not die, perhaps
+    dialogue: Ohh.. I'm so happy.. If a "Newborn" says we would not die, perhaps
       WE won't..
     playerOptions:
-    - I think that.. if you try to see how would you look like if you were to stop..
-    - What do you know about me? about "Newborns"?
-    - You just need to rest, freind..
+    - I think that.. If you try to see how would you look like if you were to stop..
+    - What do you know about me? About "Newborns"?
+    - You just need to rest, friend..
     nextDialogueIndex: 030000000800000009000000
   - conditions: []
     requiresGrip: 0
@@ -100,9 +99,9 @@ MonoBehaviour:
     nextDialogueIndex: 09000000
   - conditions: []
     requiresGrip: 0
-    dialogue: Rest.. WE haven't stopped pressing with our fingers for.. too long..
+    dialogue: Rest.. WE haven't stopped pressing with our fingers for.. Too long..
     playerOptions:
-    - I think that.. if you try to see how would you look like if you were to stop..
+    - I think that.. If you try to see how would you look like if you were to stop..
     - Why do you think that is?
     nextDialogueIndex: 030000000c000000
   - conditions: []
@@ -114,11 +113,11 @@ MonoBehaviour:
     nextDialogueIndex: 020000000b000000
   - conditions: []
     requiresGrip: 0
-    dialogue: 'No one have spoken to US in months.. No one want''s too.. '
+    dialogue: 'No one have spoken to US in months.. No one want''s to.. '
     playerOptions:
     - What are you doing?
     - Why do you think that is?
-    - You look.. so sad..
+    - You look.. So sad..
     nextDialogueIndex: 010000000c00000012000000
   - conditions: []
     requiresGrip: 0
@@ -132,15 +131,15 @@ MonoBehaviour:
     requiresGrip: 0
     dialogue: WE do..
     playerOptions:
-    - Choose yourself friend.. if you do so, others will choose you as well.
-    - Then why wont you start doing something about it??
+    - Choose yourself, friend.. If you do so, others will choose you as well.
+    - Then why won't you start doing something about it??
     nextDialogueIndex: 0e00000010000000
   - conditions: []
     requiresGrip: 0
     dialogue: Will you choose me, "Newborn"?
     playerOptions:
-    - Yes i will.
-    - What do you know about me? about "Newborns"
+    - Yes I will.
+    - What do you know about me? About "Newborns"
     nextDialogueIndex: 0600000008000000
   - conditions:
     - condi: 5
@@ -164,7 +163,7 @@ MonoBehaviour:
     nextDialogueIndex: 63000000
   - conditions: []
     requiresGrip: 0
-    dialogue: WE are.. so sad..
+    dialogue: WE are.. So sad..
     playerOptions:
     - What are you doing?
     - Why do you think that is?
