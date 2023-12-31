@@ -14,29 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueSteps:
   - conditions: []
-    requiresGrip: 0
-    dialogue: " Ahh, what's this? These are the eyes of a \u2018Newborn\u2019! I
-      didn't think that THEY are still watching... Interesting.."
+    verull: 0
+    dialogue: "Ahh, what's this? These are the eyes of a \u2018Newborn\u2019! I didn't
+      think that THEY are still watching... Interesting.."
     playerOptions:
     - Newborn?
     - Who are you??
     nextDialogueIndex: 0100000002000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: ' Yes! I am amazed myself that THEY have sent you here, but.. Why are
       you here??'
     playerOptions:
     - I haven't a clue.. I don't know this place.. Or even.. Where I come from...
     nextDialogueIndex: 03000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: ' Me? I am no one of importance, unlike yourself, a Newborn... Tell
       me, why are you here child?'
     playerOptions:
     - I haven't a clue.. I don't know this place.. Or even.. Where I come from...
     nextDialogueIndex: 03000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: "THEY have sent a \u2018Newborn\u2019 without a memory?.. Odd...Tell
       me child, what do you see?"
     playerOptions:
@@ -55,7 +55,7 @@ MonoBehaviour:
       text: War piece added.
       optionNum: 1
       num: 0
-    requiresGrip: 0
+    verull: 0
     dialogue: I cant believe this.. THEY have sent an uncompleted one? This must
       be a mistake... But then again, THEY don't make mistakes..
     playerOptions:
@@ -63,7 +63,7 @@ MonoBehaviour:
     - What happened here?
     nextDialogueIndex: 0700000008000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: 'These are all good questions. Questions I cannot answer in this state
       of yours, I''m afraid.. '
     playerOptions:
@@ -72,7 +72,7 @@ MonoBehaviour:
     - Why cant you tell me?
     nextDialogueIndex: 0400000006000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: "I fear that if you knew, you might \u2018break\u2019. I almost did.."
     playerOptions:
     - Its weird I.. I see everything in a different color than yours, you look..
@@ -83,7 +83,7 @@ MonoBehaviour:
       text: War piece added.
       optionNum: 1
       num: 0
-    requiresGrip: 0
+    verull: 0
     dialogue: "We are in \u201CBeladan village\u201D, I honestly can\u2019t say it
       was once a happy place, but.. It definitely was happier than it is today.."
     playerOptions:
@@ -91,7 +91,7 @@ MonoBehaviour:
     - What happened here?
     nextDialogueIndex: 0b00000008000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: This place was one of the first places that have been attacked during
       the great war..
     playerOptions:
@@ -103,7 +103,7 @@ MonoBehaviour:
       text: "Your head begins to hurt. \u201CSo many questions...\u201D"
       optionNum: 0
       num: 0
-    requiresGrip: 0
+    verull: 0
     dialogue: "Ho yes, and a big one at that, I would imagine a \u2018Newborn\u2019
       such as yourself would not know of that \u2018war\u2019 but I would advise
       you to take this matter seriously."
@@ -115,14 +115,14 @@ MonoBehaviour:
       text: "Your head begins to hurt. \u201CSo many questions...\u201D"
       optionNum: 0
       num: 0
-    requiresGrip: 0
+    verull: 0
     dialogue: "Quite rightfully so.. The king of \u201CBalthas\u201D did not give
       any choice BUT war."
     playerOptions:
     - Do you maybe know.. Who I am?
     nextDialogueIndex: 0b000000
   - conditions: []
-    requiresGrip: 0
+    verull: 0
     dialogue: That my child, I do not know. It is something you will discover on
       your own. But I do know WHAT you are.
     playerOptions: []
@@ -132,7 +132,7 @@ MonoBehaviour:
       text: 
       optionNum: 0
       num: 0
-    requiresGrip: 0
+    verull: 0
     dialogue: You posses powers that even mages do not understand. You can communicate
       with SOULS. Just hold them very firmly and concentrate. Here, you can try with
       me.
