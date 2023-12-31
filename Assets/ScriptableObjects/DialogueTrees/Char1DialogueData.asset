@@ -23,8 +23,8 @@ MonoBehaviour:
     nextDialogueIndex: 0100000002000000
   - conditions: []
     verull: 0
-    dialogue: ' Yes! I am amazed myself that THEY have sent you here, but.. Why are
-      you here??'
+    dialogue: Yes! I am amazed myself that THEY have sent you here, but.. Why are
+      you here??
     playerOptions:
     - I haven't a clue.. I don't know this place.. Or even.. Where I come from...
     nextDialogueIndex: 03000000
@@ -48,7 +48,7 @@ MonoBehaviour:
   - conditions:
     - condi: 1
       text: "\u200BYou feel confused and mostly tired.. You manage to regain your
-        focus when you notice the ruin intron of you."
+        focus when you notice the ruin infront of you."
       optionNum: 0
       num: 0
     - condi: 2

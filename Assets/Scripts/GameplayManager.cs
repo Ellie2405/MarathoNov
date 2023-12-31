@@ -13,6 +13,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] TravelManager tm;
     [SerializeField] Character InteractedChar;
     [SerializeField] Player player;
+    [SerializeField] Log log;
+    [SerializeField] GameObject logWindow;
     int currentMapID;
 
     [SerializeField] GameObject startDialogueButtons;
@@ -27,6 +29,7 @@ public class GameplayManager : MonoBehaviour
     Color NotDarkColor = new(0, 0, 0, 0);
     [SerializeField] Sprite test;
     bool isControlEnabled = false;
+    bool isLogOpen = false;
     bool isGripEnabled = false;
     bool IsCharacterIn = false;
     bool dialogueStarted = false;
@@ -155,7 +158,8 @@ public class GameplayManager : MonoBehaviour
 
     public void StartDialogue() //talk button pressed
     {
-        if(isGripEnabled) gripButton.gameObject.SetActive(true);
+        LogEvent($"Started conversation with {dm.GetInteractedChar().Name()}");
+        if (isGripEnabled) gripButton.gameObject.SetActive(true);
         dialogueStarted = true;
         dm.StepForward();
         IsCharacterIn = true;
@@ -177,6 +181,7 @@ public class GameplayManager : MonoBehaviour
         tm.ToggleNavigationUI(true);
         ToggleDialogueVisuals(false);
         FadeCharacterOut();
+        LogEvent($"Ended conversation with {dm.GetInteractedChar().Name()}");
     }
 
     public void SelectWorldButtonLayout(int index)
@@ -200,7 +205,7 @@ public class GameplayManager : MonoBehaviour
         isGripEnabled = true;
     }
 
-    public void Grip()
+    public void Grip() //grip button pressed
     {
         if (player.isGripping || dm.GetInteractedChar().wasGripped) return;
         isControlEnabled = false;
@@ -211,6 +216,7 @@ public class GameplayManager : MonoBehaviour
         dm.GetInteractedChar().ApplyGrip();
         dm.ResetSettings();
         Invoke(nameof(GripGraphic), 2);
+        LogEvent($"You gripped {dm.GetInteractedChar().Name()}");
         //Invoke(nameof(dm.StepForward), 4);
     }
 
@@ -220,6 +226,7 @@ public class GameplayManager : MonoBehaviour
         player.EndGrip();
         FadeCharacterOut();
         Invoke(nameof(UngripGraphic), 2);
+        LogEvent($"You stopped gripping {dm.GetInteractedChar().Name()}");
     }
 
     public void FadeCharacterIn()
@@ -260,4 +267,34 @@ public class GameplayManager : MonoBehaviour
         else
             Darkening.DOColor(NotDarkColor, 2);
     }
+
+    #region Log
+
+    public void LogMessage(string str)
+    {
+        log.AddMessage(str);
+    }
+    public void LogPlayer(string str)
+    {
+        log.AddPlayerMessage(str);
+    }
+    public void LogNarrator(string str)
+    {
+        log.AddNarrator(str);
+    }
+
+    public void LogEvent(string str)
+    {
+        log.AddEvent(str);
+    }
+
+    public void ToggleLogWindow()
+    {
+        logWindow.SetActive(!isLogOpen);
+        //UIElements[0].gameObject.SetActive(isLogOpen);
+        //UIElements[1].gameObject.SetActive(isLogOpen);
+        isLogOpen = !isLogOpen;
+    }
+
+    #endregion
 }

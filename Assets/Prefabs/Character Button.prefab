@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterID: 0
+  button: {fileID: 6410267387843941559}
 --- !u!114 &6410267387843941559
 MonoBehaviour:
   m_ObjectHideFlags: 0

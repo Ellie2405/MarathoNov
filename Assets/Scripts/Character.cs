@@ -16,6 +16,11 @@ public class Character : MonoBehaviour
 
     [SerializeField] int currentDialogue = 0;
 
+    public string Name()
+    {
+        return characterName;
+    }
+
     //add trigger system
     //some chat options will trigger an event - closeness, information, narrator, etc
 

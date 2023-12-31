@@ -19,6 +19,7 @@ public class PlayerDialogueOption : MonoBehaviour, IPointerClickHandler, IPointe
     public void OnPointerClick(PointerEventData eventData)
     {
         SoundManager.Instance.PlaySound(SoundManager.Sounds.OptionPick);
+        GameplayManager.Instance.LogPlayer(textElement.text);
         OnOptionClick.Invoke(ID, optionPointer);
     }
 

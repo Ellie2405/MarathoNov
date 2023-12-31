@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Windows;
 
 public class DialogManager : MonoBehaviour
 {
@@ -118,7 +119,9 @@ public class DialogManager : MonoBehaviour
     //print what the character has to say
     public void PrintCharacterDialogue()
     {
-        SetCharDialogue(InteractedChar.GetDialogue());
+        string input = InteractedChar.GetDialogue();
+        SetCharDialogue(input);
+        GameplayManager.Instance.LogMessage($"{InteractedChar.Name()}: {input}");
     }
 
     void SetCharDialogue(string input)
@@ -273,6 +276,7 @@ public class DialogManager : MonoBehaviour
                     {
                         if (!player.CheckIfHasInformation(item.num))
                         {
+                            GameplayManager.Instance.LogEvent(item.text);
                             player.GainInformation(item.num);
                             PrintEventText(item.text);
                         }
@@ -331,6 +335,7 @@ public class DialogManager : MonoBehaviour
         {
             //NarratorText.gameObject.SetActive(true);
             SetCharDialogue(NarratorText.text);
+            GameplayManager.Instance.LogNarrator(NarratorText.text);
             isNarratorSpeaking = true;
             isNarratorQueued = false;
             return true;
@@ -348,6 +353,7 @@ public class DialogManager : MonoBehaviour
         if (isEarlyNarratorQueued) //activate narrator if he is queued
         {
             SetCharDialogue(earlyNarratorText);
+            GameplayManager.Instance.LogNarrator(NarratorText.text);
             isEarlyNarratorSpeaking = true;
             isEarlyNarratorQueued = false;
             return true;
