@@ -1,0 +1,309 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: GaredDialogue
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions: []
+    verull: 0
+    dialogue: Hi there little fellow, do you come from the village to seek refuge?
+    playerOptions:
+    - Yes! I ran away to seek shelter.
+    - No, I am just wondering around..
+    - Who are you?
+    nextDialogueIndex: 010000000500000006000000
+  - conditions:
+    - condi: 1
+      text: The man points to one of the tents. You notice the extent of the damage
+        this man has endured...
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Then you've come to the right place. We've all had to leave our homes
+      and loved ones to escape this hopeless war... You can find yourself a warm
+      soup right there.
+    playerOptions:
+    - Why are you so injured?
+    - Who are you?
+    nextDialogueIndex: 0200000006000000
+  - conditions: []
+    verull: 0
+    dialogue: Ho, that...? I am in better shape than most. I was the last to leave
+      Baladan Village. Some soldiers caught me evacuating a house. I could only save
+      the little girl, but her mother died in front of her..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: 
+    playerOptions:
+    - I have met the old woman back in the village.. She told me something else..
+    - Who are you?
+    nextDialogueIndex: 0400000006000000
+  - conditions:
+    - condi: 1
+      text: Your eyes start to glow for but a moment. As he speaks, you understand
+        that he cares not for the people's accusations, yet deep pain resides within
+        him.
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Aye, I am sure she has.. I did what I could.. I really tried... There
+      was nothing I could do!
+    playerOptions:
+    - Do you blame yourself..?
+    nextDialogueIndex: 14000000
+  - conditions:
+    - condi: 1
+      text: The man points to one of the tents. You notice the extent of the damage
+        this man has endured...
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: 'Ho.. If you need anything.. My name is Gared and I manage this refugee
+      camp and its people. You can find yourself a warm soup right there. '
+    playerOptions:
+    - Why are you so injured?
+    - Who are you?
+    nextDialogueIndex: 0200000006000000
+  - conditions: []
+    verull: 0
+    dialogue: My name is Gared. I manage this camp and its people.
+    playerOptions:
+    - Why are you in charge?
+    - I have heard rumors about the city..
+    - What can you tell me about the king?
+    - Do you happen to know anything about that crystal over there?
+    nextDialogueIndex: 0700000017000000190000001b000000
+  - conditions:
+    - condi: 1
+      text: As if repenting for his station, the elder cast his gaze downward and
+        sorrow covers his face.
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: I used to be the village's security officer.. You see, we haven't seen
+      war in many years.. No one thought something like this could happen..
+    playerOptions:
+    - You were not prepared..
+    - Do the people blame you?
+    nextDialogueIndex: 0800000013000000
+  - conditions: []
+    verull: 0
+    dialogue: Not at all, no... Even if we were, a village could never fend them
+      self against the forces of Reathrion..
+    playerOptions:
+    - Are they the ones who attacked you?
+    - What can you tell me about them?
+    nextDialogueIndex: 090000000d000000
+  - conditions: []
+    verull: 0
+    dialogue: Aye, after the king commanded the assault upon Reathrion, our forces
+      were utterly defeated, leaving us defenseless..
+    playerOptions:
+    - Why did the king command an attack upon Reathrion?
+    nextDialogueIndex: 0a000000
+  - conditions: []
+    verull: 0
+    dialogue: Sadly, I know little of the king's politics. All I know is the old
+      king recently passed, and his son took over not too long ago...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: Some do say it's tied to Reathrion's supplies. Each month, provisions
+      marked with Reathrion's banner were delivered to us. Food and supplies and
+      all of those sorts stopped arriving in the past two years or so..
+    playerOptions:
+    - So you were having trouble without those supplies?
+    nextDialogueIndex: 0c000000
+  - conditions:
+    - condi: 9
+      text: 'The old man tried to respond to you but then.. "Gared, come quick! She
+        won''t last long!". You heard a man''s voice shouting behind you. '
+      optionNum: 0
+      num: 0
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Excuse me little fellow, I must leave.. I wish you good luck!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: Reathrion is a myth, a tale whispered in hushed tones. Some speak of
+      spirits from the forest convening, crafting a haven for the extraordinary.
+    playerOptions:
+    - Extraordinary?
+    nextDialogueIndex: 0e000000
+  - conditions:
+    - condi: 1
+      text: A thought went through your mind. Maybe an answer or an excuse to your
+        existence could be found there?
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Aye. Individuals with powers and abilities we do not understand.
+    playerOptions:
+    - How can I get there?
+    nextDialogueIndex: 0f000000
+  - conditions: []
+    verull: 0
+    dialogue: You don't. Reathrion is the only place on this world that no man have
+      ever stepped his foot upon. The only people to do so were the people of Medeia..
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: For some reason the spirits of the forest have let them rule in their
+      stead.. That fact have made many think of the spirit as nothing but a myth.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: That day was no more than a decade ago, and the people of Medeia have
+      been there ever since. Yet, still, no man has been allowed to enter the haven.
+    playerOptions:
+    - Wow.. I wonder what is in there..
+    nextDialogueIndex: 12000000
+  - conditions:
+    - condi: 9
+      text: 'The old man tried to respond to you but then.. "Gared, come quick! She
+        won''t last long!". You heard a man''s voice shouting behind you. '
+      optionNum: 0
+      num: 0
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Excuse me little fellow, I must leave.. I wish you good luck!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 1
+      text: Your eyes start to glow for but a moment. As he speaks, you understand
+        that he cares not for the people's accusations, yet deep pain resides within
+        him. You notice the extent of the damage this man has endured
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Some do.. Some don't.. A piece of advice little fellow, you can never
+      please everyone...
+    playerOptions:
+    - Do you blame yourself..?
+    nextDialogueIndex: 14000000
+  - conditions:
+    - condi: 9
+      text: The old man opened his eyes, shocked by the question. You do not think
+        it's the right thought that runs through your mind, but... His eyes... They
+        are beautiful.
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: I... I think I am. This feeling is something that I have made my peace
+      with. That blame sustains me, even after all I have done... I NEED it.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 1
+      text: 'You suddenly hear a man''s voice shouting behind you.  "Gared, come
+        quick! She won''t last long!". '
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: The choices we make are mirrors to what we are little fellow.. Don't
+      you forget that.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Excuse me little fellow, I must leave.. I wish you good luck!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: I would assume the city is rebuilding. The attack concluded a mere
+      few days ago. The king will not be allowed to sit on his throne ever again.
+      I would imagine that some powerful men are fighting for the throne as we speak.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: I would not advise such a little fellow to travel there at this time..
+    playerOptions:
+    - Why are you in charge?
+    - What can you tell me about the king?
+    - Do you have happen to know anything about that crystal over there?
+    nextDialogueIndex: 07000000190000001b000000
+  - conditions: []
+    verull: 0
+    dialogue: All I know is the old king recently passed, and his son took over not
+      too long ago...
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: Each month, provisions marked with Reathrion's banner were delivered
+      to us. Food and supplies and all of those sorts stopped arriving in the past
+      two years or so..
+    playerOptions:
+    - Why are you in charge?
+    - I have heard rumors about the city..
+    - Do you have happen to know anything about that crystal over there?
+    nextDialogueIndex: 07000000170000001b000000
+  - conditions: []
+    verull: 0
+    dialogue: Aye, as a matter of fact, I do. I used to have a... Friend, you might
+      call her that. She lived at the outskirts of the Misty Forest. She tried to
+      use her magical abilities to recreate something I do not understand.
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions: []
+    verull: 0
+    dialogue: Aye.. Her name was Eliria. A beautiful elf, who lived here for a while
+      to research that crystal.
+    playerOptions:
+    - Eliria.. Do you know where she is or what does she look like?
+    - I know that name! Do you know anything else about her?
+    nextDialogueIndex: 1d0000001e000000
+  - conditions: []
+    verull: 0
+    dialogue: Aye, pointy ears and a red pendant necklace. If you see her, you won't
+      miss her. As for her whereabouts, I do not know. She just left one day, and
+      I don't think she will ever return.
+    playerOptions:
+    - Why are you in charge?
+    - I have heard rumors about the city..
+    - What can you tell me about the king?
+    nextDialogueIndex: 070000001700000019000000
+  - conditions: []
+    verull: 0
+    dialogue: Do you now? Well all I know is that she is an elf and that she used
+      to carry a small snake with her...
+    playerOptions:
+    - A snake.. Thank you!
+    nextDialogueIndex: 1f000000
+  - conditions: []
+    verull: 0
+    dialogue: Aye, your welcome little fellow.
+    playerOptions:
+    - Why are you in charge?
+    - I have heard rumors about the city..
+    - What can you tell me about the king?
+    nextDialogueIndex: 070000001700000019000000

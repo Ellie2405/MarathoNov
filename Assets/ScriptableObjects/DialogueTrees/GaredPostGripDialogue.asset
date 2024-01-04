@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: GaredPostGripDialogue
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions:
+    - condi: 0
+      text: The old man walks away. His steps seems heavier, as if something hit
+        him right in his stomach..
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: What are you doing?? Leave me be!! I.. I feel so cold.. I don't know
+      what trickery you have done but.. Don't ever touch me again!
+    playerOptions: []
+    nextDialogueIndex: 02000000
+  - conditions:
+    - condi: 1
+      text: The old man smiles at you, innocence in his eyes. You stop for a moment
+        to appreciate the beauty that lies in his eyes..
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: What are you doing little fellow? Did you stumble and grab me?
+    playerOptions: []
+    nextDialogueIndex: 03000000
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: I mean it! Stay away!
+    playerOptions: []
+    nextDialogueIndex: 
+  - conditions:
+    - condi: 6
+      text: 
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: I must go, little fellow. Take care and stay safe wherever you may
+      choose to go.
+    playerOptions: []
+    nextDialogueIndex: 

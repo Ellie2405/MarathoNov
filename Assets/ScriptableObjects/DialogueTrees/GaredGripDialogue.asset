@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b0c1e9c7c6c7a42b00fb69ea071f45, type: 3}
+  m_Name: GaredGripDialogue
+  m_EditorClassIdentifier: 
+  DialogueSteps:
+  - conditions:
+    - condi: 9
+      text: You hear many gasps and wailing sounds coming from within the ground..
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: Whaa..t Arr..e Yo...u
+    playerOptions:
+    - I am a 'Newborn'.. I came to.. Help you.
+    - I am not sure..
+    nextDialogueIndex: 0100000002000000
+  - conditions: []
+    verull: 0
+    dialogue: W..e Kno..w You..r kind.. W..e Nee..d to suffer..
+    playerOptions:
+    - What do you know about my kind?
+    - So let me help you.. I know what you are going through..
+    nextDialogueIndex: 0300000004000000
+  - conditions: []
+    verull: 0
+    dialogue: Yo..u Ar..e A Ne..w Bor..n
+    playerOptions: []
+    nextDialogueIndex: 01000000
+  - conditions: []
+    verull: 0
+    dialogue: Yo..u Ca..n Alte..r souls.. Fo..r the good or for the worse..
+    playerOptions: []
+    nextDialogueIndex: 04000000
+  - conditions:
+    - condi: 1
+      text: Your eyes glow for but a moment.. Many thoughts are now consuming your
+        mind.. "What is he talking about.. He needs my help" "But what if he doesn't..?"
+        "What is there in his heart but pain? Why would anyone need pain?"  One of
+        your thoughts have reached your lips..
+      optionNum: 0
+      num: 0
+    verull: 0
+    dialogue: W..e Do NO..T Wan..t T..o Chang..e
+    playerOptions:
+    - Why would anyone need pain?
+    nextDialogueIndex: 05000000
+  - conditions: []
+    verull: 0
+    dialogue: Som..e Time..s W..e do not need to hea..l. Th..e Pai..n I..s the only
+      thing we have left fro..m Wha..t W..e have lost.
+    playerOptions:
+    - Should I try and alter him..? (Attempt alteration)
+    - Should I leave him be..? (Leave)
+    nextDialogueIndex: 
